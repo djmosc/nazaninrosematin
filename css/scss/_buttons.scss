@@ -34,7 +34,7 @@ button {
 		font-size: 1em;
 		vertical-align: middle;
 		@extend [class^="icon-"];
-		@extend .icon-list:before;
+		@extend .icon-menu:before;
 	}
 }
 
@@ -63,7 +63,7 @@ button {
 }
 .facebook-btn {
 	&:before {
-		@extend .icon-facebook:before;
+		//@extend .icon-facebook:before;
 	}
 	&:hover {
 		&:before {
@@ -74,7 +74,7 @@ button {
 
 .twitter-btn {
 	&:before {
-		@extend .icon-twitter:before;
+		// @extend .icon-twitter:before;
 
 	}
 	&:hover {
@@ -87,7 +87,7 @@ button {
 
 .tumblr-btn {
 	&:before {
-		@extend .icon-tumblr:before;
+		// @extend .icon-tumblr:before;
 	}
 	&:hover {
 		&:before {
@@ -98,7 +98,7 @@ button {
 
 .instagram-btn {
 	&:before {
-		@extend .icon-instagram:before;
+		// @extend .icon-instagram:before;
 	}
 	&:hover {
 		&:before {
@@ -111,7 +111,7 @@ button {
 
 .pinterest-btn {
 	&:before {
-		@extend .icon-pinterest:before;
+		// @extend .icon-pinterest:before;
 	}
 	&:hover {
 		&:before {
@@ -197,7 +197,7 @@ button {
 	width: 10em;
 	&:before {
 		@extend [class^="icon-"];
-		@extend .icon-arrow-up;
+		@extend .icon-chevron-up;
 		font-size: 4em;
 		margin: 0 0 0.2em;
 		display: block;
@@ -219,7 +219,7 @@ button {
 	width: 10em;
 	&:before {
 		@extend [class^="icon-"];
-		@extend .icon-arrow-down;
+		@extend .icon-chevron-down;
 		font-size: 4em;
 		margin: 0 0 0.2em;
 		display: block;

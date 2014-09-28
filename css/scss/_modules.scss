@@ -20,6 +20,7 @@ blockquote {
 			cursor: default;
 			color: #FFF;
 			background: #000;
+
 			&:hover {
 				color: #FFF;
 				background: #000;
@@ -91,9 +92,10 @@ blockquote {
 .logo {
 	&:before {
 		@extend [class^="icon-"];
-		@extend .icon-peonylim:before;
+		@extend .icon-nazaninrosematin:before;
 	}
 }
+
 /* =============================================================================
    Widgets
    ========================================================================== */

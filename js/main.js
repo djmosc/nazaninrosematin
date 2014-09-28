@@ -111,23 +111,12 @@
 			element: $('#header'),
 			init: function(){
 				var header = main.header.element;
-					menuBtn = $('.menu-btn', header),
-					searchBtn = $('> .bottom .search-btn', header),
-					searchForm = $('.search-form', header);
-
+					menuBtn = $('.menu-btn', header);
+					
 				menuBtn.on('click', function(e){
 					e.preventDefault();
 					header.toggleClass('navigation-open');
 				});
-
-				searchBtn.on('click', function(e){
-					e.preventDefault();
-					header.toggleClass('search-open');
-					if(header.hasClass('search-open')) {
-						$('.field', searchForm).focus();
-					}
-				});
-
 			}
 		},
 

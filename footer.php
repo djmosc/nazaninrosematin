@@ -12,7 +12,7 @@
 	
 	<footer id="footer" class="site-footer" role="contentinfo">
 		<div class="container inner">
-			<?php get_template_park('inc/social-links'); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'secondary-navigation navigation', 'depth' => 2 )); ?>
 		</div>
 	</div>
 	</footer><!-- #footer .site-footer -->
