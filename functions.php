@@ -28,10 +28,6 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts', 30);
 
 add_action( 'wp_print_styles', 'custom_styles', 30);
 
-
-
-//add_filter( 'manage_nav-menus_columns', 'custom_manage_nav_menus_columns' );
-
 // Custom Filters
 
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
@@ -44,9 +40,6 @@ add_filter( 'the_content_feed', 'custom_the_content_feed', 10, 2);
 
 
 //Custom shortcodes
-
-
-
 
 
 function custom_setup_theme() {
@@ -95,22 +88,22 @@ function custom_init(){
 					'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
 					'plural' => "Press Releases"
 				)
-			);
-
-			register_taxonomy(
-				'city',
-				'location',
-				array(
-					'labels' => array(
-						'name'                       => _x( 'Cities', 'taxonomy general name' ),
-						'singular_name'              => _x( 'City', 'taxonomy singular name' )
-					),
-					'rewrite' => array( 'slug' => 'city' ),
-					'hierarchical' => true,
-				)
-			);				
+			);			
 		}
 	}
+
+	register_taxonomy(
+		'collection',
+		'product',
+		array(
+			'labels' => array(
+				'name'                       => _x( 'Collections', 'taxonomy general name' ),
+				'singular_name'              => _x( 'Collection', 'taxonomy singular name' )
+			),
+			'rewrite' => array( 'slug' => 'collection' ),
+			'hierarchical' => true,
+		)
+	);	
 }
 
 function custom_wp(){
@@ -168,53 +161,10 @@ function custom_styles() {
 }
 
 function custom_pre_get_posts( $query ) {
-	$layout = get_layout();
-	$layouts = array('list', 'full');
-
-	if ( $query->is_main_query() && in_array($layout, $layouts) ) {
-		if($layout == 'full') {
-			$query->set('posts_per_page', 3);
-		} elseif($layout == 'list') {
-			$query->set('posts_per_page', 4);
-		}
+	
+	if ( $query->get('post_type') == 'press_release' ) {
+		$query->set('posts_per_page', 4);
 	}
 
 	return $query;
-}
-
-function get_layout() {
-	return ( isset($_GET['layout']) ) ? $_GET['layout'] : 'grid';
-}
-
-function get_instagram_images($count, $user_id) {
-	$images = get_transient( 'instagram_images' );
-	
-	if( $images !== false ) return $images;
-
-	$response = wp_remote_get('https://api.instagram.com/v1/users/'.$user_id.'/media/recent?count='.$count.'&access_token=975210125.a2e2346.7be3fa000252400aacc231aca788fa7a');
-	
-	if ( ! is_wp_error($response)) {
-		$json = json_decode(wp_remote_retrieve_body($response));
-		$data = (isset($json->data)) ? $json->data : null;
-		$images = [];
-
-		foreach($data as $image) {
-			$images[] = array(
-				'url' => $image->images->low_resolution->url,
-				'link' => $image->link
-			);
-		}
-
-		set_transient( 'instagram_images', $images, 60*60*24);
-	} else {
-		//$result->get_error_message()
-	}
-
-	return $images;
-}
-
-function get_image_url($attachment_id, $size = 'thumbnail') {
-	$image = wp_get_attachment_image_src( $attachment_id, $size );
-			
-	return $image[0];
 }

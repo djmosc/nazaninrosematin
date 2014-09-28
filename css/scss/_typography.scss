@@ -1,11 +1,11 @@
 
 a {
 	text-decoration: none;
-	color: #000;
+	color: #CCC;
 	cursor: pointer;
 	@include transition(all 0.3s ease);
 	&:hover {
-		color: #dec7cd;
+		color: #000;
 	}
 }
 

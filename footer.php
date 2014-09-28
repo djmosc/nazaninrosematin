@@ -14,13 +14,11 @@
 		<div class="container inner">
 
 			<div class="top">
-				<?php get_template_park('inc/social-links'); ?>
+				<?php get_template_part('inc/social-links'); ?>
 				<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'footer', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'footer-navigation navigation' )); ?>
 			</div>
 			<div class="bottom">
-				<p class="copyright">
-				&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> <?php _e("All rights reserved.", THEME_NAME); ?>
-				</p>
+				<p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> <?php _e("All rights reserved.", THEME_NAME); ?></p>
 			</div>
 		</div>
 	</div>
