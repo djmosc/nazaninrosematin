@@ -13,7 +13,7 @@
 		
 		<?php get_template_part('inc/page-header'); ?>
 
-		<?php get_template_part('inc/content'); ?>
+		<?php get_template_part('inc/post-content'); ?>
 
 	</article>
 <?php endwhile; // end of the loop. ?>

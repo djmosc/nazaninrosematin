@@ -11,11 +11,10 @@ input[type=password],
 textarea,
 select {
 	@include box-sizing(border-box);
-	color: #a5a5a5;
+	color: #666;
 	border: none;
-	
-	letter-spacing: 1px;
-	@include font-size(8);
+	@include font-size(15);
+
 	&:focus {
 		outline: none;
 	}
@@ -29,67 +28,35 @@ input[type=number],
 input[type=password],
 textarea {	
 	@include border-radius(0);
-	background: #f7f7f7;
-	padding: 1.4em;
+	background: #FFF;
+	border: 1px solid #b0b0b0;
+	padding: 0.6em;
 	max-width: 100%;
-
-	&:focus {
-		color: #000;
-	}
-
-}
-
-textarea {
-	font-family: sans-serif;
-	@include font-size(11);
-	text-transform: none;
-	letter-spacing: 1px;
 }
 
 select {
 	@include border-radius(0);
 	-webkit-appearance: none;
 	display: inline-block;
-	border: 0;
-	padding: 1.4em;
-	background: #f7f7f7;
-	color: #797979;
+	border: 1px solid #b0b0b0;
+	padding: 0.6em;
+	@include font-size(15);
+	background: #f4f4f4;
 	position: relative;
+	
 	@media screen and (-webkit-min-device-pixel-ratio:0) {
 		padding-right: 40px;
-		background: #f7f7f7 url(../images/misc/dropdown.png) no-repeat center right;
 	}
-
-	option {
-		text-transform: none;
-		font-family: sans-serif;
-		padding: 0.5em;
-	}
-	
 }
-
-
 
 textarea {
 	height: 200px;
 }
 
 input[type=submit],
-input[type=reset],
-button[type=submit] {
-	@include transition(all 0.3s ease);
-	border: none;
-	display: inline-block;
-	color: #FFF;
+input[type=reset] {
 	letter-spacing: 2px;
-	font-size: 8px;
-	padding: 1em;
-
-	&:focus {
-		outline: none;
-	}
 }
-
 
 button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
@@ -105,7 +72,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 label {
 	margin: 0 0 0.3em 0;
-	@include font-size(8);
+	@include font-size(10);
 }
 
 fieldset {
@@ -119,42 +86,107 @@ fieldset {
 .gform_wrapper {
 	max-width: 100% !important;
  	margin: 0 !important;
- 	background: #ebebeb;
-// 	color: #FFF;
-	form {
-		overflow: hidden;
+
+ 	&.gf_browser_chrome {
+ 		.gfield_checkbox li input[type=checkbox],
+ 		.gfield_radio li input[type=radio],
+ 		.gfield_checkbox li input {
+ 			margin-left: 1px;
+ 		}
+
+ 	}
+ 	form {
 		.gform_heading {
-			margin-bottom: 1em;
-			text-align: center;
+
 			.gform_title {
+				color: #4A90E2;
+				@include font-size(18);
 				font-weight: normal;
-				@include font-size(30);
+			}
+
+			.gform_description {
+				color: #1656A1;
+				@include font-size(25);
 			}
 		}
 
-	// 	.validation_error {
-	// 		color: #a40000;
-	// 	}
+		div.validation_error {
+			text-align: center;
+			@include font-size(12);
+			font-weight: normal;
+			margin: 2em 0 0 0;
+		}
 
 	 	.gform_body {
-
-	// 		margin: 20px 0;
-	// 		font-family: Arial, Helvetica, sans-serif;
-
-	// 		font-size: 11px;
 
 			.gform_fields {
 				margin: 0;
 				padding: 0;
-				overflow: hidden;
 				list-style: none;
 				@extend .clearfix;
 
+				&.top_label {
+					.gfield_label {
+						margin: 0.5em 0;
+						display: none;
+					}
+				}
+
+
+				&.left_label {
+					.gfield_label {
+						margin: 0.5em 0;
+						padding-top: 1em;
+
+						@include device-width(5) {
+							width: 100%;
+						}
+					}	
+
+					.ginput_container {
+						input[type=text],
+						input[type=email],
+						input[type=url],
+						input[type=tel],
+						input[type=number],
+						input[type=password], 
+						textarea,
+						select {
+							background: #FFF;
+							border: 1px solid #cccccc;
+							@include font-size(13);
+							padding: 0.4em 1em;
+							color: #696969;
+							line-height: 22px;
+
+							@include device-width(5) {
+								width: 100%;
+							}
+						}
+					}					
+				}
+
 	 			.gfield {
-	 				margin: 0 0 1em 0;
+	 				margin: 2em 0;
+					padding: 0;
+
+					@include device-width(5) {
+						margin: 1em 0;
+					}
+
+					&.gfield_error {
+						border: none;
+						background: none;
+	//					@include background(rgba(#a40000, 0.4));
+						padding: 0 !important;
+
+						label {
+							color: #333;
+						}
+					}
 
 					&.gsection {
-						border-bottom: 1px solid #e1e1e1;
+						border-bottom: 1px solid #ececec;
 					}
 
 					&.hide-label {
@@ -162,327 +194,68 @@ fieldset {
 							display: none;
 						}
 					}
-
-					.gfield_label {
-						
-						@include font-size(8);
-						letter-spacing: 2px;
-					}
-
-	// 				.gfield_description {
-	// 					font-size: 10px;
-	// 				 	font-style: italic;
-	// 				 	text-align: right;
-
-	// 					&.validation_message {
-	// 						color: #a40000;
-	// 					}
-	// 				}
-
-					.ginput_left,
-					.ginput_right {
-						// width: 50%;
-						display: inline-block;
-						//margin: 0 1em 0 0;
-						label {
-							margin: 0.3em 0 0 0;
-							font-size: 7px;
-							display: block;
-							letter-spacing: 2px;
-						}
-					}
-
-					&.gfield_error {
-						margin: 0 !important;
-						padding: 0 !important;
-						background: none;
-						border: none;
-
-						&.gfield_contains_required {
-							margin: 0 !important;
-							padding: 0 !important;
-						}
-
-						&.gf_left_half {
-							width: 46%;
-						}
-
-						.ginput_container {
-							margin: 0 !important;
-							max-width: 100%;
-						}
-					}
-
-					&.large-container {
-						.ginput_container {
-							@include border-radius(3px);
-							background: #f2f2eb;
-							background: rgba(#FFF, 0.5);
-							border: 1px solid #c3c2bb;
-							padding: 6em 8em;
-
-							@include device-width(9) {
-								padding-left: 4em;
-								padding-right: 4em;	
-							}
-						}
-					}
-
 					&.gf_left_half,
 					&.gf_right_half {
-						width: 44% !important;
+						margin-bottom: 0;
 
-						@include device-width(6) {
-							width: 100% !important;
-							float: none !important;
-							clear: none !important;
+						@include device-width(5) {
+							width: auto;
+							float: none;
 						}
 					}
 
-	 				.ginput_container {
-	 					input[type=text],
+					.ginput_container {
+						input[type=text],
 						input[type=email],
 						input[type=url],
 						input[type=tel],
 						input[type=number],
-						input[type=password],
-						textarea {
-							@include box-sizing(none);
-							background: #FFF;
-							padding: 1.2em;
-							max-width: 100%;
-							@include font-size(11);
-							@include futura;
-							text-transform: none;
-
-							// &.small {
-							// 	width: 25%;
-							// }
-
-							// &.medium {
-							// 	width: 50%;
-							// }
-
-							// &.large {
-							// 	width: 100%;
-							// }
-						}
-
+						input[type=password], 
+						textarea,
 						select {
-							@include border-radius(0);
-							-webkit-appearance: none;
-							display: inline-block;
 							background: #FFF;
-							border: 1px solid #b0b0b0;
-							@include box-shadow(0px 4px 2px -1px rgba(0, 0, 0, 0.3));
-							padding: 0.6em;
-							@include font-size(12);
-							background: #FFF;
-							position: relative;
-
-							@media screen and (-webkit-min-device-pixel-ratio:0) {
-								padding-right: 40px;
-								background: #FFF url(../images/misc/dropdown.jpg) no-repeat center right;
-								background-size: contain;
-							}
-
-							&.medium {
-								width: 45%;
-							}
+							border: 1px solid #cccccc;
+							@include font-size(13);
+							padding: 0.4em 1em;
+							color: #696969;
+							line-height: 22px;
 						}
+					}
 
-						textarea {
-							width: 100%;
+					.gfield_description {
+						&.validation_message {
+							padding: 0 !important;
+							margin: 0;
+							color: #df5206;
 						}
-	 				}	
-
-	 				.gfield_description {
-	 					&.validation_message {
-	 						padding: 6px 0 0 0 !important;
-	 					}
-	 				}	
+					}
 	 			}
 	 		}
 	 	}
 
-	 	.gform_footer,
-	 	.gform_page_footer {
-//	 		width: 99.2%;
-	 		text-align: right;
-	 		padding: 0;
+	 	.gform_footer {
 	 		margin: 1em 0;
-	 		.button,
-	 		input.button,
-	 		input[type=submit],
-	 		input.button.gform_button {
+	 		padding: 0 1em 0 0;
+	 		@extend .clearfix;
 
+			@include device-width(5) {
+				text-align: center;
 			}
+
+
+			&.left_label {
+				padding: 0px 0 10px 31%;
+
+				@include device-width(5) {
+					padding: 0;
+				}
+			}	 		
+
+	 		.button {
+				@extend .primary-btn;
+				border: none;
+				background: none;
+	 		}
 	 	}
-	}
-}
-
-.newsletter_wrapper {
-	background: url(../images/backgrounds/texture_peach.jpg);
-
-	form {
-		position: relative;
-
-		.gform_heading {
-			margin: 0 !important;
-			float: left;
-			width: 33.333% !important;
-			text-align: left !important;
-			padding: 0 0 0 0.8em;
-			@include box-sizing(border-box);
-			.gform_title {
-				display: inline-block;
-				width: auto;
-				margin: 0;
-				text-align: left;
-				@include font-size(13);
-				letter-spacing: 2px !important;
-				vertical-align: middle;
-				line-height: 3;
-			}
-
-			.gform_description {
-				display: inline-block;
-				text-align: left;
-				@include font-size(10);
-				vertical-align: -1px;
-
-				@include device-width(7) {
-					display: none;
-				}
-
-				&:before {
-					content: "\2022";
-					margin: 0 0.5em 0 0;
-				}
-			}
-		}
-
-		.gform_body {
-			width: 66.6666%;
-			float: left;
-			@include box-sizing(border-box);
-			padding-right: 160px;
-			.gform_fields {
-				.gfield {
-					margin: 0;
-
-					input[type=text],
-					input[type=email],
-					input[type=url],
-					input[type=tel],
-					input[type=number],
-					input[type=password] {
-						background: #f4f4f4;
-						border-top-color: #f4f4f4;
-						border-bottom-color: #f4f4f4;
-						border-left: 3px solid #d7d7d7;
-						display: block;
-						width: 100%;
-					}
-
-				}
-			}
-		}
-
-		.gform_footer {
-			margin: 0;
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-	}
-}
-
-.search-form {
-	position: relative;
-
-	.field {
-		@include font-size(8);
-		border: none;
-		vertical-align: middle;
-	}
-	.submit-btn {
-		vertical-align: bottom;
-		padding: 7px 6px;
-		width: 36px;
-		height: 36px;
-		background: none;
-		color: #000;
-		border-color: #f7f7f7;
-		background: #f7f7f7;
-
-		&:before {
-			@include font-size(12);
-		}
-
-		&:hover {
-			background: #FAFAFA;
-			border-color: #FAFAFA;
-		}
-	}
-}
-
-.comment-form {
-
-	.comment-form-author,
-	.comment-form-email,
-	.comment-form-url,
-	.comment-form-comment {
-		@extend .clearfix;
-	}
-
-	.comment-form-author,
-	.comment-form-email {
-		float: left;
-		width: 49%;
-	}
-
-	.comment-form-author {
-		margin-right: 2%;
-	}
-
-	.comment-form-url {
-		clear: left;
-	}
-
-	.comment-form-comment {
-		label {
-			padding-top: 0;
-		}
-	}
-
-	label {
-
-		width: 80px;
-		display: block;
-		float: left;
-		letter-spacing: 1px;
-		padding: 2.1em 0 0 0;
-	}
-
-	input[type=text],
-	input[type=email],
-	input[type=url],
-	textarea {
-		background: #FFF;
-		border: 1px solid #eeeeee;
-		width: calc(100% - 80px);
-		@include box-sizing(border-box);
-		float: left;
-		@include font-size(13);
-		@include futura;
-		text-transform: none;
-	}
-
-	.form-submit {
-		text-align: right;
-
-		input[type=submit] {
-		}
 	}
 }
