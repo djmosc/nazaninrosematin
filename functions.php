@@ -14,10 +14,6 @@ require( $template_directory . '/inc/default/hooks.php' );
 
 require( $template_directory . '/inc/default/shortcodes.php' );
 
-require( $template_directory . '/inc/classes/primary-nav-walker.php' );
-
-require( $template_directory . '/inc/classes/category-dropdown-url-walker.php' );
-
 // Custom Actions
 
 add_action( 'after_setup_theme', 'custom_setup_theme' );
@@ -195,18 +191,6 @@ function custom_wp(){
 
 function custom_widgets_init() {
 	global $template_directory;
-
-	require( $template_directory . '/inc/widgets/post.php' );
-
-	require( $template_directory . '/inc/widgets/category.php' );
-
-	require( $template_directory . '/inc/widgets/advert.php' );
-
-	require( $template_directory . '/inc/widgets/products.php' );
-
-	require( $template_directory . '/inc/widgets/popular_posts.php' );
-
-	require( $template_directory . '/inc/widgets/social.php' );
 
 	//require( $template_directory . '/inc/widgets/twitter/feed.php' );
 	
