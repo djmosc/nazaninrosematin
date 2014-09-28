@@ -31,12 +31,25 @@
 <body <?php body_class(); ?>>
 <div id="tortilla">
 	<header id="header" role="banner">
-		<div class="inner container">
-			<h1 class="logo-container">
-				<a class="logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
-			</h1>
-			<button class="menu-btn"></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation', 'depth' => 2, 'container_id' => 'header-navigation' )); ?>
-		</div>
+			<div class="top">
+				<div class="inner container">
+					<?php global $woocommerce; ?>		
+					<div class="mini-cart">
+						<a class="btn cart-btn" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>">
+							<i class="icon icon-bag"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+						</a>					
+						<?php wc_get_template_part( 'cart/mini-cart' ); ?>						
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="inner container">
+					<h1 class="logo-container">
+						<a class="logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
+					</h1>
+					<button class="menu-btn"></button>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation', 'depth' => 2, 'container_id' => 'header-navigation' )); ?>
+				</div>			
+			</div>	
 	</header><!-- #header -->
 	<div id="main" class="site-main" role="main">
