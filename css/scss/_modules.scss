@@ -125,6 +125,7 @@ blockquote {
 		a.cart-btn {
 			padding: 10px;
 			@include inline-block;
+			color: #FFF;
 
 			&:hover {
 				background: #000;
@@ -133,15 +134,44 @@ blockquote {
 		}
 
 		.cart-content {
-			display: block;
-			// display: none;
+			display: none;
 			position: absolute;
 			top: 35px;
 			right: 0;
 			width: 450px;
-			border: 1px solid #404040;
 			background: #FFF;
 			z-index: 5;
+
+			.inner {
+				position: relative;
+				background: #FFF;
+				border: 1px solid #000;
+
+				&:after, &:before {
+					bottom: 100%;
+					left: 90%;
+					border: solid transparent;
+					content: " ";
+					height: 0;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+				}
+
+				&:after {
+					border-color: rgba(255, 255, 255, 0);
+					border-bottom-color: #FFF;
+					border-width: 10px;
+					margin-left: -10px;
+				}
+				&:before {
+					border-color: rgba(0, 0, 0, 0);
+					border-bottom-color: #000;
+					border-width: 11px;
+					margin-left: -11px;
+				}				
+			}
+			
 
 			.top {
 				width: 100%;
@@ -152,12 +182,28 @@ blockquote {
 			}
 
 			ul {
-				padding: 30px;
+				padding: 2.2em;
 				list-style-type: none;
 
 				li {
 					@extend .clearfix;
 					text-align: left;
+					border-top: 1px solid #ccc;
+					padding: 1em 0;
+					position: relative;
+
+					&:first-child {
+						border-top: none;
+						padding-top: 0;
+					}
+
+					&:last-child {
+						padding-bottom: 0;	
+					}
+
+					a {
+						display: block;
+					}
 
 					.thumbnail {
 						max-width: 100px;
@@ -182,7 +228,7 @@ blockquote {
 				text-align: center;
 				padding: 1.3em 1em;
 
-				.btn {
+				.primary-btn {
 					margin: 0 25px;
 				}
 			}
@@ -191,6 +237,10 @@ blockquote {
 		&:hover {
 			.cart-content {
 				display: block;
+
+				@include device-width(5) {
+					display: none;
+				}
 			}
 		}							
 	}

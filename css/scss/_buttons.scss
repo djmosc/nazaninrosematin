@@ -231,9 +231,14 @@ button {
 	}
 }
 
-.btn {
+.primary-btn {
 	color: #000;
 	text-transform: uppercase;
 	border-bottom: 1px solid #000;
 	padding-bottom: 8px;
+
+	&:hover {
+		color: #CCC;
+		border-bottom: 1px solid #CCC;
+	}
 }

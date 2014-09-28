@@ -40,7 +40,9 @@
 								<i class="icon icon-bag"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
 							</a>
 							<div class="cart-content">
-								<?php wc_get_template_part( 'cart/mini-cart' ); ?>													
+								<div class="inner">
+									<?php wc_get_template_part( 'cart/mini-cart' ); ?>													
+								</div>
 							</div>					
 						</li>
 					</ul>
