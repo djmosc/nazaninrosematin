@@ -216,3 +216,20 @@ if ( ! function_exists( 'sort_tag_score' )) {
 		}
 	}
 }
+
+if( function_exists('acf_add_options_page') ) acf_add_options_page();
+
+
+add_action('admin_head', 'custom_admin_head');
+function custom_admin_head() {
+  echo '<style>
+    .acf-table td.acf-label,
+    table.acf_input tbody tr td.label {
+    	width: 10%;
+    }
+
+    .acf-table tr.acf-tab-wrap td .acf-tab-group {
+    	padding-left: 8px;
+    }
+  </style>';
+}

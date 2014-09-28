@@ -4,8 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package peonylim
- * @since peonylim 1.0
+ * @package nazaninrosematin
+ * @since nazaninrosematin 1.0
  */
 ?>
 <!DOCTYPE html>

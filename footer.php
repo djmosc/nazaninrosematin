@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package peonylim
- * @since peonylim 1.0
+ * @package nazaninrosematin
+ * @since nazaninrosematin 1.0
  */
 ?>
 	</div><!-- #main .site-main -->
