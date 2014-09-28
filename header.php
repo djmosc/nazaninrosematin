@@ -34,12 +34,16 @@
 			<div class="top">
 				<div class="inner container">
 					<?php global $woocommerce; ?>		
-					<div class="mini-cart">
-						<a class="btn cart-btn" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>">
-							<i class="icon icon-bag"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
-						</a>					
-						<?php wc_get_template_part( 'cart/mini-cart' ); ?>						
-					</div>
+					<ul class="mini-cart">
+						<li>
+							<a class="btn cart-btn" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>">
+								<i class="icon icon-bag"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+							</a>
+							<div class="cart-content">
+								<?php wc_get_template_part( 'cart/mini-cart' ); ?>													
+							</div>					
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="bottom">
