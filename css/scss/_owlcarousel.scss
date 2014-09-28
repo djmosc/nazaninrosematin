@@ -1,0 +1,367 @@
+/* 
+ *  Core Owl Carousel CSS File
+ */
+.owl-carousel {
+	display: none;
+	width: 100%;
+	-webkit-tap-highlight-color: transparent;
+	/* position relative and z-index fix webkit rendering fonts issue */
+	position: relative;
+	z-index: 1;
+	
+	.owl-stage {
+		position: relative;
+		-ms-touch-action: pan-Y;
+	}
+
+	.owl-stage:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+
+	.owl-stage-outer {
+		position: relative;
+		overflow: hidden;
+		/* fix for flashing background */
+		-webkit-transform: translate3d(0px, 0px, 0px);
+	}
+	
+	.owl-item {
+		position: relative;
+		min-height: 1px;
+		float: left;
+		-webkit-backface-visibility: hidden;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+	}
+	.owl-item img {
+		-webkit-transform-style: preserve-3d;
+	}
+	
+	.owl-nav.disabled,
+	.owl-dots.disabled {
+		display: none;
+	}
+
+	.owl-nav .owl-prev,
+	.owl-nav .owl-next,
+	.owl-dot {
+		cursor: pointer;
+		cursor: hand;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	&.owl-loaded {
+		display: block;
+	}
+
+	&.owl-loading {
+		opacity: 0;
+		display: block;
+	}
+
+	&.owl-hidden {
+		opacity: 0;
+	}
+
+	&.owl-refresh .owl-item {
+		display: none;
+	}
+	
+	&.owl-drag .owl-item {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	&.owl-grab {
+		cursor: move;
+		cursor: -webkit-grab;
+		cursor: -o-grab;
+		cursor: -ms-grab;
+		cursor: grab;
+	}
+
+	&.owl-rtl {
+		direction: rtl;
+	}
+
+	&.owl-rtl .owl-item {
+		float: right;
+	}
+}
+
+/* No Js */
+.no-js .owl-carousel {
+	display: block;
+}
+
+
+/* 
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel{
+	.animated {
+		-webkit-animation-duration: 1000ms;
+		animation-duration: 1000ms;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+	.owl-animated-in {
+		z-index: 0;
+	}
+	.owl-animated-out {
+		z-index: 1;
+	}
+	.fadeOut {
+		-webkit-animation-name: fadeOut;
+		animation-name: fadeOut;
+	}
+}
+
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* 
+ *  Owl Carousel - Auto Height Plugin
+ */
+
+.owl-height {
+	@include transition(height, 500ms, ease-in-out)
+}
+
+/* 
+ *  Owl Carousel - Lazy Load Plugin
+ */
+
+.owl-carousel {
+	.owl-item {
+		.owl-lazy {
+			opacity: 0;
+			@include transition(opacity, 400ms, ease);
+		}
+		img{
+			transform-style: preserve-3d;
+		}
+	}
+}
+
+
+
+
+/* 
+ *  Owl Carousel - Custom Nav
+ */
+
+.owl-nav {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -(58px / 2);
+
+	@include device-width(6) {
+		display: none;
+	}
+	
+	.owl-prev,
+	.owl-next {
+		width: 1em;
+		height: 1em;
+		display: block;
+		position: absolute;
+		z-index: 10;
+		cursor: pointer;
+		opacity: 1;
+		@include transition(all .3s ease);
+		background: #FFF;
+		background: rgba(#FFF, 0.5);
+		color: #000;
+		padding: 0.1em;
+		line-height: 1;
+		text-align: center;
+		font-size: 2.5em;
+
+		&:before {
+			@extend [class^="icon-"];
+			display: block;
+			text-align: center;
+			line-height: 1;
+			font-size: 0.7em;
+		}
+
+		&:hover {
+			background: #000;
+			color: #FFF;
+		}
+	}
+		
+	.owl-next {
+		right: 0;
+		&:before {
+			@extend .icon-angle-right:before;
+		}
+	}
+	
+	.owl-prev {
+		left: 0;
+
+		&:before {
+			@extend .icon-angle-left:before;
+		}
+	}
+}
+
+/* 
+ *  Owl Carousel - Custom Nav
+ */
+
+.owl-dots {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	-webkit-tap-highlight-color: transparent;
+}
+.owl-dots .owl-dot {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+.owl-dots .owl-dot span {
+	width: 18px;
+	height: 18px;
+	margin: 1em 0.5em;
+	background: #FFF;
+	display: block;
+	-webkit-backface-visibility: visible;
+	@include border-radius(9999px);
+	@include transition(all 0.3s ease);
+
+	@include device-width(5) {
+		margin: 0.2em;
+	}
+}
+.owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
+	background: #000;
+}
+
+.owl-thumbnails .owl-dots {
+	background: #000;
+	background: rgba(#000, 0.8);
+
+	@include device-width(8) {
+		position: relative;
+	}
+	
+	.owl-dot {
+		vertical-align: middle;
+		margin: 0 1em;
+
+		@include device-width(10) {
+			margin: 0 0.5em;
+		}
+
+		span {
+			width: 65px;
+			height: 65px;
+			line-height: 88px;
+			text-align: center;
+			background: none;
+			position: relative;
+			color: #FFF;
+
+			@include device-width(10) {
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+			}
+
+			@include device-width(5) {
+				width: 18px;
+				height: 18px;
+				line-height: 18px;
+				background: rgba(#FFF, 0.5);
+				margin: 1em 0.5em;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			
+			i {
+				line-height: 65px;
+				@include font-size(35);
+
+				@include device-width(10) {
+					line-height: 50px;
+					 @include font-size(25);
+				}
+
+				@include device-width(5) {
+					display: none;
+				}
+
+				&:before {
+					@include transition(all 0.3s ease);
+				}
+			}
+
+			img,
+			svg {
+				width: 50%;
+				height: 50%;
+				vertical-align: middle;
+				fill: #FFF;
+				@include device-width(5) {
+					display: none;
+				}
+			}
+		} 
+
+		&.active span, 
+		&:hover span  {
+			background: #FFF;
+
+			i,
+			img {
+				color: #000;
+			}
+
+			svg {
+				fill: #000;
+			}
+		}
+	}
+}

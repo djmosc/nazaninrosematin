@@ -1,0 +1,73 @@
+@mixin arial {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.arial {
+	@include arial;
+}
+
+
+@mixin futura {
+	font-family: 'L Futura W01';
+	font-weight: 400;
+	font-style: normal;
+}
+
+.futura {
+	@include futura;
+}
+
+@mixin futura-heavy {
+	font-family: 'L Futura W01';
+	font-weight: 600;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.futura-heavy {
+	@include futura-heavy;
+}
+
+@mixin futura-bold {
+	font-family: 'L Futura W01';
+	font-weight: 700;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.futura-bold {
+	@include futura-bold;
+}
+
+@mixin garamond {
+	font-family:'Adobe Garamond W01';
+	font-weight: 400;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+.garamond {
+	@include garamond;
+}
+
+@mixin garamond-italic {
+	font-family: 'Adobe Garamond W01'; 
+	font-weight: 400;
+	font-style: italic;
+	-webkit-font-smoothing: antialiased;
+}
+
+.garamond-italic {
+	@include garamond-italic;
+}
+
+@mixin garamond-bold {
+	font-family: 'Adobe Garamond W01'; 
+	font-weight: 700;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+.garamond-bold {
+	@include garamond-bold;
+}

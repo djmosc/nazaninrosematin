@@ -1,0 +1,283 @@
+
+a {
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+	@include transition(all 0.3s ease);
+	&:hover {
+		color: #dec7cd;
+	}
+}
+
+
+h1 {
+	@include futura;
+	@include font-size(48);
+	line-height: 0.9;
+	margin: 0.3em 0;
+	text-transform: uppercase;
+
+	&:before {
+		font-size: 70%;
+	}
+}
+
+h2 {
+	@include futura;
+	margin: 0.4em 0;
+	@include font-size(34);
+	line-height: 1.8;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 6px;
+	&:before {
+		font-size: 70%;
+	}
+
+	@include device-width(8) {
+		@include font-size(30); 
+	}
+
+	@include device-width(6) {
+		@include font-size(26); 
+	}
+
+	@include device-width(4) {
+		@include font-size(22); 
+	}
+}
+
+h3 {
+	@include futura;
+	margin: 0.5em 0;
+	@include font-size(32);
+	line-height: 1;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 4px;
+
+	&:before {
+		font-size: 70%;
+	}
+}
+
+h4 {
+	@include futura;
+	margin: 0.5em 0;
+	@include font-size(22);
+	line-height: 1;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	&:before {
+		font-size: 70%;
+	}
+}
+
+h5 {
+	@include futura;
+	margin: 0.5em 0;
+	@include font-size(16);
+	line-height: 1;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	&:before {
+		font-size: 70%;
+	}
+}
+
+h6 {
+	@include futura;
+	margin: 0.5em 0;
+	@include font-size(12);
+	line-height: 1;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	&:before {
+		font-size: 70%;
+	}
+}
+
+p {
+	margin: 0.8em 0;
+}
+
+.huge {
+	font-size: 150%;
+}
+
+.big {
+	font-size: 130%;
+}
+
+.small {
+	font-size: 90%;
+}
+
+.small {
+	margin: 0.4em 0;
+}
+
+.tiny {
+	font-size: 70%;
+}
+
+p.tiny {
+	margin: 5px 0;
+}
+
+.bold,
+strong,
+b {
+	font-weight: bold;
+}
+
+.normal {
+	font-weight: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.align-left,
+.text-left {
+	text-align: left;
+}
+
+.align-right,
+.text-right {
+	text-align: right;
+}
+
+.align-center,
+.text-center {
+	text-align:  center;
+}
+
+.align-middle,
+.text-middle {
+	vertical-align: middle;
+}
+
+.normal-style {
+	font-style: normal;	
+}
+
+.underline {
+	text-decoration: underline;	
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.normalcase {
+	text-transform: none;
+}
+
+.black {
+	color: #000;
+}
+
+.white {
+	color: #fff;
+}
+
+a.white:hover {
+	color: #ffbbbb;
+}
+
+.grey {
+	color: #a8a8a8;	
+}
+
+a.grey:hover {
+	color: #878787;	
+}
+
+.dark-grey {
+	color: #333333;
+}
+
+a.dark-grey:hover {
+	color: #141414;
+}
+
+.light-grey {
+	color: #CCC;	
+}
+
+a.light-grey:hover {
+	color: #a8a8a8;	
+}
+
+.orange {
+	color: #d35c2a;	
+}
+
+a.orange:hover {
+	color: #ac4b22;
+}
+
+.pink {
+	color: #ed1375;	
+}
+
+.blue {
+	color: #008ece;	
+}
+
+a.blue:hover {
+	color: #00587f;
+}
+.dark-blue {
+	color: #0057a6;
+}
+
+.teal {
+	color: #13a89e;
+}
+
+.red {
+	color: #701830;
+}
+
+a.red:hover {
+	color: #000;
+}
+
+.green {
+	color: #c2ed00;
+}
+
+a.green:hover {
+	color: #c9f400;
+}
+
+.purple {
+	color: #9c0059;
+}
+
+a.purple:hover {
+	color: #000000;
+}
+.error {
+	color: #7e0606;
+}
+
+.brown {
+	color: #7d563b;
+}
+
+a.brown:hover {
+	color: #5c3f2b;
+}
+
+.light-brown {
+	color: #c09367;
+}
+
+a.light-brown:hover {
+	color: #977451;
+}
