@@ -62,9 +62,12 @@
 				carousel.owlCarousel({
 					navText: false,
 					dots: false,
-					nax: true,
+					nav: true,
 					items: 1,
-					loop: true
+					loop: true,
+					center: true,
+					autoWidth: true,
+					margin: 50
 				});
 			}
 		},

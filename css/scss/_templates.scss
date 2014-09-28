@@ -1,0 +1,18 @@
+#taxonomy-collection {
+	> .inner {
+		padding: 0 10px;
+	}
+
+	.carousel {
+		.btn {
+			display: block;
+		}
+	}
+
+	.collection-footer {
+		.title {
+			display: inline-block;
+			border-bottom: 1px solid #000;
+		}
+	}
+}

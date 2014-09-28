@@ -199,40 +199,40 @@
 		cursor: pointer;
 		opacity: 1;
 		@include transition(all .3s ease);
-		background: #FFF;
-		background: rgba(#FFF, 0.5);
 		color: #000;
-		padding: 0.1em;
+		background: #FFF;
 		line-height: 1;
 		text-align: center;
-		font-size: 2.5em;
+		font-size: 2em;
+		padding: 0.5em;
+		@include box-sizing(content-box);
 
 		&:before {
 			@extend [class^="icon-"];
 			display: block;
 			text-align: center;
 			line-height: 1;
-			font-size: 0.7em;
 		}
 
 		&:hover {
-			background: #000;
-			color: #FFF;
+			color: #CCC;
 		}
 	}
 		
 	.owl-next {
 		right: 0;
+		margin-right: -1em;
 		&:before {
-			@extend .icon-angle-right:before;
+			@extend .icon-chevron-right:before;
 		}
 	}
 	
 	.owl-prev {
 		left: 0;
-
+		margin-left: -1em;
+		
 		&:before {
-			@extend .icon-angle-left:before;
+			@extend .icon-chevron-left:before;
 		}
 	}
 }
@@ -319,49 +319,11 @@
 				right: 0;
 				bottom: 0;
 			}
-			
-			i {
-				line-height: 65px;
-				@include font-size(35);
-
-				@include device-width(10) {
-					line-height: 50px;
-					 @include font-size(25);
-				}
-
-				@include device-width(5) {
-					display: none;
-				}
-
-				&:before {
-					@include transition(all 0.3s ease);
-				}
-			}
-
-			img,
-			svg {
-				width: 50%;
-				height: 50%;
-				vertical-align: middle;
-				fill: #FFF;
-				@include device-width(5) {
-					display: none;
-				}
-			}
 		} 
 
 		&.active span, 
 		&:hover span  {
 			background: #FFF;
-
-			i,
-			img {
-				color: #000;
-			}
-
-			svg {
-				fill: #000;
-			}
 		}
 	}
 }
