@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons';
-	src:url('fonts/icons.eot?-g8yka7');
-	src:url('fonts/icons.eot?#iefix-g8yka7') format('embedded-opentype'),
-		url('fonts/icons.woff?-g8yka7') format('woff'),
-		url('fonts/icons.ttf?-g8yka7') format('truetype'),
-		url('fonts/icons.svg?-g8yka7#icons') format('svg');
+	src:url('fonts/icons.eot?fuab7q');
+	src:url('fonts/icons.eot?#iefixfuab7q') format('embedded-opentype'),
+		url('fonts/icons.woff?fuab7q') format('woff'),
+		url('fonts/icons.ttf?fuab7q') format('truetype'),
+		url('fonts/icons.svg?fuab7q#icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-nazaninrosematin:before {
+	content: "\e607";
+}
 .icon-bag:before {
 	content: "\e600";
 }
