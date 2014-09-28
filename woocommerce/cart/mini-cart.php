@@ -34,17 +34,21 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 					?>
 					<li>
+						<a href="<?php echo get_permalink( $product_id ); ?>">
 					<?php if ( ! $_product->is_visible() ) { ?>
 						<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name; ?>
 					<?php } else { ?>
-						<a class="thumbnail" href="<?php echo get_permalink( $product_id ); ?>">
+						
+						<div class="thumbnail" href="<?php echo get_permalink( $product_id ); ?>">
 							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
-						</a>
+						</div>
 						<span class="product-name"><?php echo $product_name; ?></span>
+
 					<?php } ?>
 						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
 						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+						</a>
 					</li>
 					<?php
 				}
@@ -64,8 +68,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="buttons">
-		<a class="btn" href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>
-		<a class="btn" href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
+		<a class="primary-btn" href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>
+		<a class="primary-btn" href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
 	</p>
 
 <?php endif; ?>
