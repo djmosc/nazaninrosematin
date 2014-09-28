@@ -315,6 +315,25 @@ blockquote {
 	}
 }
 
+.post-header {
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 2em 0;
+	margin: 0 10px 3em 10px;
+	text-align: center;
+}
+
+.post-content {
+	h1, h2, h3, h4, h5, p {
+		margin: 2em 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	font-size: 0.9em;
+}
+
 /* =============================================================================
    Widgets
    ========================================================================== */
