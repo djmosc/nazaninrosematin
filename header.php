@@ -87,7 +87,7 @@
 				</h1>
 				<button class="menu-btn"></button>
 				<button class="search-btn"></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation', 'walker' => new Primary_Navigation_Walker, 'depth' => 2, 'container_id' => 'header-navigation' )); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation', 'depth' => 2, 'container_id' => 'header-navigation' )); ?>
 			</div>			
 		</div>
 	</header><!-- #header -->
