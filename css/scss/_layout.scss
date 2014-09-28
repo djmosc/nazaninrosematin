@@ -60,7 +60,17 @@ body {
 	}
 }
 
-#main {}
+#main {
+	#page {
+		max-width: 480px !important;
+	 	margin: 0 auto;
+ 			
+		@include device-width(9) {
+			padding: 0 10px;
+		}
+	}
+
+}
 
 #footer {
 	text-align: center;
