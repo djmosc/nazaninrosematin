@@ -30,65 +30,13 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="tortilla">
-<?php if(is_front_page()): ?>
-	<?php if( have_rows('slides') ): ?>
-	<div id="carousel" class="flexslider">
-		<a class="logo scroll-down-btn"></a>
-		<ul class="slides">
-			<?php while ( have_rows('slides') ) : the_row(); ?>
-			<?php
-				$the_post = get_sub_field('post');
-				$image_id = get_sub_field('image');
-				
-				if( !empty($image_id) ) {
-					$image_url = wp_get_attachment_image_src($image_id, array(1200, 800, 'bfi_thumb' => true));
-				} else {
-					$image_id = get_post_thumbnail_id($the_post->ID);
-					$image_url = get_image($image_id, array(1200, 800, 'bfi_thumb' => true));
-				}
-			?>
-			<li class="slide" style="background-image: url(<?php echo $image_url; ?>)">
-				
-				<div class="content">
-					<div class="inner">
-						<h3 class="title"><a href="<?php echo get_the_permalink($the_post->ID); ?>"><?php echo get_the_title($the_post->ID); ?></a></h3>
-						<div class="excerpt"><?php echo get_excerpt(100, $the_post->ID); ?></div>
-					</div>
-				</div>
-			</li>
-			<?php endwhile; ?>
-		</ul>
-		<button class="down-btn scroll-down-btn"></button>
-	</div>
-	<?php wp_reset_postdata(); ?>
-	<?php endif; ?>
-<?php endif; ?>	
 	<header id="header" role="banner">
-		<div class="top">
-			<div class="inner container">
-				<?php if(is_front_page()): ?>
-				<!-- <button class="up-btn"></button> -->
-				<?php endif; ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'secondary-navigation navigation', 'depth' => 2 )); ?>
-				
-				<div class="info clearfix">
-
-					<?php get_template_part('inc/social-links'); ?>
-	
-					<?php get_search_form(); ?>
-
-				</div>
-			</div>
-		</div>
-		<div class="bottom">
-			<div class="inner container">
-				<h1 class="logo-container">
-					<a class="logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
-				</h1>
-				<button class="menu-btn"></button>
-				<button class="search-btn"></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation', 'depth' => 2, 'container_id' => 'header-navigation' )); ?>
-			</div>			
+		<div class="inner container">
+			<h1 class="logo-container">
+				<a class="logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
+			</h1>
+			<button class="menu-btn"></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation', 'depth' => 2, 'container_id' => 'header-navigation' )); ?>
 		</div>
 	</header><!-- #header -->
 	<div id="main" class="site-main" role="main">
