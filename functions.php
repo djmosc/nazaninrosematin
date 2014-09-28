@@ -149,7 +149,7 @@ function custom_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('modernizr', $template_directory_uri.'/js/libs/modernizr.min.js');
 	wp_enqueue_script('owlcarousel', $template_directory_uri.'/js/plugins/jquery.owlcarousel.js', array('jquery'), '', true);
-	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery', 'modernizr', 'plugins'), '', true);
+	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery'), '', true);
 }
 
 
