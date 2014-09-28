@@ -6,15 +6,5 @@
 			<?php dynamic_sidebar('homepage_latest'); ?>			
 		</div>
 	</div>
-
-	<?php get_template_part('inc/social-bar'); ?>
-	<div class="locations-bar-container container">
-		<?php get_template_part('inc/locations-bar'); ?>
-	</div>
-	<div class="closet-container container">
-		<?php get_template_part('inc/closet'); ?>
-	</div>
-
-	<?php get_template_part('inc/popular'); ?>
 </section><!-- #index -->
 <?php get_footer(); ?>
