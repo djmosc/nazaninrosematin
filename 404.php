@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package peonylim
- * @since peonylim 1.0
+ * @package nazaninrosematin
+ * @since nazaninrosematin 1.0
  */
 
 get_header(); ?>
