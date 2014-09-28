@@ -22,29 +22,9 @@ body {
 
 #header {
 
-	.top {
+	> .top {
 		background: #606060;
 		text-align: right;
-
-		.mini-cart {
-			position: relative;
-			padding: 0;
-			margin: 0;
-
-			.cart-content {
-				display: none;
-				position: absolute;
-				bottom: 0;
-				right: 0;
-			}
-
-			&:hover {
-				.cart-content {
-					display: block;
-				}
-			}
-
-		}
 	}
 }
 

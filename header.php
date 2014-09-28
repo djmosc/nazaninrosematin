@@ -43,7 +43,7 @@
 								<?php wc_get_template_part( 'cart/mini-cart' ); ?>													
 							</div>					
 						</li>
-					</div>
+					</ul>
 				</div>
 			</div>
 			<div class="bottom">

@@ -11,8 +11,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
-
+<?php global $woocommerce; ?>
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
+<div class="top">
+	<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?><?php _e(' Added to The Bag') ?>
+</div>
 
 <ul class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
 
@@ -34,9 +37,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					<?php if ( ! $_product->is_visible() ) { ?>
 						<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name; ?>
 					<?php } else { ?>
-						<a href="<?php echo get_permalink( $product_id ); ?>">
-							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name; ?>
+						<a class="thumbnail" href="<?php echo get_permalink( $product_id ); ?>">
+							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
 						</a>
+						<span class="product-name"><?php echo $product_name; ?></span>
 					<?php } ?>
 						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
@@ -57,13 +61,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 <?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 
-	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
-
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="buttons">
-		<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>
-		<a href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
+		<a class="btn" href="<?php echo WC()->cart->get_cart_url(); ?>" class="button wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>
+		<a class="btn" href="<?php echo WC()->cart->get_checkout_url(); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
 	</p>
 
 <?php endif; ?>
