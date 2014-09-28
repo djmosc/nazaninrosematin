@@ -15,9 +15,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
 	@include futura;
-	@include font-size(48);
+	@include font-size(12);
 	line-height: 0.9;
-	margin: 0.3em 0;
 	text-transform: uppercase;
 
 	&:before {
@@ -27,7 +26,7 @@ h1 {
 
 h2 {
 	@include futura;
-	@include font-size(34);
+	@include font-size(12);
 	line-height: 1.8;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -39,7 +38,7 @@ h2 {
 
 h3 {
 	@include futura;
-	@include font-size(32);
+	@include font-size(12);
 	line-height: 1;
 	text-transform: uppercase;
 	font-weight: normal;
@@ -52,7 +51,7 @@ h3 {
 
 h4 {
 	@include futura;
-	@include font-size(22);
+	@include font-size(12);
 	line-height: 1;
 	letter-spacing: 4px;
 	text-transform: uppercase;
@@ -63,7 +62,7 @@ h4 {
 
 h5 {
 	@include futura;
-	@include font-size(16);
+	@include font-size(12);
 	line-height: 1;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -74,7 +73,7 @@ h5 {
 
 h6 {
 	@include futura;
-	@include font-size(12);
+	@include font-size(10);
 	line-height: 1;
 	letter-spacing: 2px;
 	text-transform: uppercase;

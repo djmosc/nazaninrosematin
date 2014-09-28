@@ -28,6 +28,8 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts', 30);
 
 add_action( 'wp_print_styles', 'custom_styles', 30);
 
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+
 // Custom Filters
 
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
@@ -38,6 +40,9 @@ add_filter( 'jpeg_quality', create_function( '', 'return 100;' ) );
 
 add_filter( 'the_content_feed', 'custom_the_content_feed', 10, 2);
 
+add_filter( 'woocommerce_taxonomy_args_product_cat', '__return_false');
+
+add_filter( 'woocommerce_taxonomy_objects_product_cat', '__return_false');
 
 //Custom shortcodes
 
@@ -62,7 +67,7 @@ function custom_setup_theme() {
 }
 
 function custom_init(){
-	global $template_directory;
+	global $template_directory, $wp_taxonomies;
 
 	require( $template_directory . '/inc/classes/bfi-thumb.php' );
 
@@ -103,7 +108,8 @@ function custom_init(){
 			'rewrite' => array( 'slug' => 'collection' ),
 			'hierarchical' => true,
 		)
-	);	
+	);
+
 }
 
 function custom_wp(){
