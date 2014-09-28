@@ -13,7 +13,7 @@ select {
 	@include box-sizing(border-box);
 	color: #a5a5a5;
 	border: none;
-	@include futura-heavy;
+	
 	letter-spacing: 1px;
 	@include font-size(8);
 	&:focus {
@@ -80,7 +80,6 @@ button[type=submit] {
 	@include transition(all 0.3s ease);
 	border: none;
 	display: inline-block;
-	@include futura-bold;
 	color: #FFF;
 	letter-spacing: 2px;
 	font-size: 8px;
@@ -106,7 +105,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 label {
 	margin: 0 0 0.3em 0;
-	@include garamond;
 	@include font-size(8);
 }
 
@@ -166,7 +164,7 @@ fieldset {
 					}
 
 					.gfield_label {
-						@include futura-heavy;
+						
 						@include font-size(8);
 						letter-spacing: 2px;
 					}
@@ -317,7 +315,7 @@ fieldset {
 	 		input.button,
 	 		input[type=submit],
 	 		input.button.gform_button {
-	 			@extend .pink-btn;
+
 			}
 	 	}
 	}
@@ -350,7 +348,6 @@ fieldset {
 			.gform_description {
 				display: inline-block;
 				text-align: left;
-				@include garamond-italic;
 				@include font-size(10);
 				vertical-align: -1px;
 
@@ -460,7 +457,7 @@ fieldset {
 	}
 
 	label {
-		@include futura-bold;
+
 		width: 80px;
 		display: block;
 		float: left;
@@ -486,7 +483,6 @@ fieldset {
 		text-align: right;
 
 		input[type=submit] {
-			@extend .pink-btn;
 		}
 	}
 }

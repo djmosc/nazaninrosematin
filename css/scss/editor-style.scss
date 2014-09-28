@@ -1,29 +1,29 @@
-@import 'compass/css3';
-@import 'mixins';
-@import 'normalize';
-@import 'fonts';
-@import 'icons';
-@import 'typography';
-@import 'grid';
-@import 'forms';
-@import 'buttons';
-@import 'misc';
+// @import 'compass/css3';
+// @import 'mixins';
+// @import 'normalize';
+// @import 'fonts';
+// @import 'icons';
+// @import 'typography';
+// @import 'grid';
+// @import 'forms';
+// @import 'buttons';
+// @import 'misc';
 
-html {
-	height: 100%;
-	font-size: 62.5%;
-}
+// html {
+// 	height: 100%;
+// 	font-size: 62.5%;
+// }
 
-body {
-	overflow-x: hidden;
-	padding: 10px;
-	color: #333333;
-	@include font-size(15);
-	line-height: 1.6;
-	min-width: 250px;
-	@include garamond;
-}
+// body {
+// 	overflow-x: hidden;
+// 	padding: 10px;
+// 	color: #333333;
+// 	@include font-size(15);
+// 	line-height: 1.6;
+// 	min-width: 250px;
+// 	@include garamond;
+// }
 
-a {
-	border-bottom: 1px solid #333;	
-}
+// a {
+// 	border-bottom: 1px solid #333;	
+// }
