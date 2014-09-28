@@ -21,10 +21,42 @@ body {
 }
 
 #header {
+	margin-bottom: 7em;
+
+	@include device-width(5) {
+		margin-bottom: 4em;		
+	}
 
 	> .top {
 		background: #606060;
 		text-align: right;
+		padding: 0 10px;
+	}
+
+	> .bottom {
+
+		.inner {
+			text-align: center;
+			padding-top: 70px;
+
+			@include device-width(5) {
+				text-align: left;
+				padding-left: 10px;
+			}
+
+			.logo-container {
+				padding-bottom: 40px;
+				@include font-size(18);
+
+				@include device-width(5) {
+					@include font-size(13);					
+				}
+
+				.logo {
+					color: #000;
+				}
+			}
+		}
 	}
 }
 

@@ -95,17 +95,146 @@ blockquote {
 	}
 }
 
-.navigation {
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		@extend .clearfix;
-	}
+#footer {
+	.navigation {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			@extend .clearfix;
+		}
 
-	li {
-		padding: 0 1em;
-		float: left;
+		li {
+			padding: 0 1em;
+			float: left;
+		}
+	}
+}
+
+#header {
+
+	.menu-btn {
+		display: none;
+
+		@include device-width(8) {
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 63px;			
+		}
+
+		@include device-width(5) {
+			top: 63px;				
+		}
+	}	
+
+	.navigation {
+		@extend .clearfix;
+
+		@include device-width(8) {
+			max-height: 0;
+			overflow: hidden;
+			transition-property: all;
+			transition-duration: .5s;
+			transition-timing-function: cubic-bezier(0, 1, 0.5, 1);			
+		}		
+
+		ul.menu {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			@extend .clearfix;
+			@include inline-block;
+			position: relative;
+			text-align: center;
+			margin-bottom: 18px;
+
+			@include device-width(8) {
+				width: 100%;
+				display: block;
+			}			
+		}
+
+		li {
+			padding: 0 1em;
+			@include inline-block;
+
+			@include device-width(8) {
+				width: 100%;
+				display: block;
+				text-align: center;
+				border-top: 1px solid #BEBEBE;
+				padding: 0;
+
+				a {
+					display: block;
+					padding: 1.5em 0;
+					background: #CCC;
+					color: #000;
+				}
+			}			
+
+			> ul {
+				position: absolute;
+				width: 100%;
+				display: none;
+				left: 0;
+				top: 40px;
+
+				@include device-width(8) {
+					width: 100%;
+					display: block;
+					position: static;
+					padding: 0;
+
+					li {
+						border: none;
+						border-top: 1px solid #D1D1D1;
+
+						a {
+							@include font-size(10);
+							background: #DFDFDF;
+							color: #000;
+
+							&:hover {
+
+							}
+						}
+					}
+				}						
+
+			}
+
+		 	&.current-menu-item, &.current-menu-ancestor {	 		
+		 		> ul {
+		 			display: block;
+		 			padding: 22px 0 0;
+		 			border-top: 1px solid #ccc;	
+
+		 			@include device-width(8) {
+		 				padding: 0;
+		 			}	 			
+		 		}
+		 	}
+
+		 	&.current_page_parent > a,
+		 	&.current-menu-item > a,
+		 	&.current-category-ancestor > a,
+		 	&.current-page-ancestor > a,
+		 	&.current-post-ancestor > a,
+		 	&.current-menu-parent > a,
+		 	&.current-post-parent > a,
+		 	&.current > a 	{
+		 		color: #000;
+		 	}	 	
+
+		}
+	}	
+
+	&.navigation-open {
+		.navigation {
+			max-height: 500px; /* approximate max height */
+		}
 	}
 }
 
@@ -123,24 +252,21 @@ blockquote {
 	> li {
 		
 		a.cart-btn {
-			padding: 10px;
+			padding: 7px;
 			@include inline-block;
 			color: #FFF;
-
-			&:hover {
-				background: #000;
-				color: #FFF;
-			}
+			font-size: 8px;
 		}
 
 		.cart-content {
 			display: none;
 			position: absolute;
-			top: 35px;
+			top: 25px;
 			right: 0;
 			width: 450px;
 			background: #FFF;
 			z-index: 5;
+			padding-top: 10px;
 
 			.inner {
 				position: relative;
@@ -235,6 +361,10 @@ blockquote {
 		}	
 
 		&:hover {
+			a.cart-btn {
+				color: #000;
+			}
+
 			.cart-content {
 				display: block;
 

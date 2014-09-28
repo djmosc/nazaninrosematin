@@ -37,7 +37,7 @@
 					<ul class="mini-cart">
 						<li>
 							<a class="btn cart-btn" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>">
-								<i class="icon icon-bag"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+								<i class="icon icon-bag"></i> BAG <?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
 							</a>
 							<div class="cart-content">
 								<div class="inner">
