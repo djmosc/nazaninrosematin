@@ -77,14 +77,13 @@ blockquote {
 	li {
 		float: left;
 		margin: 0;
+		padding: 0 1em;
 	}
 
 	a {
 		display: inline-block;
 		color: #000;
 		vertical-align: middle;
-		padding: 0.5em;
-		font-size: 0.7em;
 	}
 }
 
@@ -93,6 +92,20 @@ blockquote {
 	&:before {
 		@extend [class^="icon-"];
 		@extend .icon-nazaninrosematin:before;
+	}
+}
+
+.navigation {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@extend .clearfix;
+	}
+
+	li {
+		padding: 0 1em;
+		float: left;
 	}
 }
 

@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "17908",
+"creatorBuild": "17753",
 "files": {
 	"\/404.php": {
 		"fileType": 8192,
@@ -294,6 +294,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/editor-style.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -338,6 +347,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/images\/misc\/favicon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1480,
+		"inputAbbreviatedPath": "\/images\/misc\/favicon.png",
+		"outputAbbreviatedPath": "\/images\/misc\/favicon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/inc\/classes\/bfi-thumb.php": {
 		"fileType": 8192,
@@ -652,6 +672,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/sidebar.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sidebar.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/single.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -682,7 +711,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Jozsef Francovszky",
+"lastSavedByUser": "DJ Mosca",
 "manualImportLinks": {
 	},
 "projectAttributes": {
