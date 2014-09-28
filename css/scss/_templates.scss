@@ -29,3 +29,17 @@
 		}
 	}
 }
+
+#archive-product {
+
+	.page-header {
+		margin: 0 10px;
+		background: #e1e3e2 url(../images/backgrounds/shop_header.png) no-repeat 15% top;
+		padding: 8em 20em;
+		
+		.page-title {
+			@include font-size(20);
+			text-align: right;
+		}
+	}
+}

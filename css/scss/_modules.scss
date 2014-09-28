@@ -109,6 +109,85 @@ blockquote {
 	}
 }
 
+
+.products {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	@extend .clearfix;
+
+	.product {
+		margin: 2em 0;
+		float: left;
+		width: 33.3333%;
+		padding: 0 10px;
+		text-align: center;
+
+		a {
+			position: relative;
+			display: block;
+			color: #000;
+			
+
+			&:hover {
+				color: #CCC;
+			}
+		}
+
+		img {
+			width: 100%;
+			margin: 0 0 1em 0;
+		}
+
+		.onsale {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #FFF;
+			padding: 0.5em;
+		}
+
+		h3,
+		.price {
+			margin: 0.4em 0;
+			@include font-size(10);
+		}
+
+		.price {
+			ins {
+				text-decoration: none;
+			}
+		}
+
+	}
+}
+
+.woocommerce-pagination {
+	text-align: center;
+
+	.page-numbers {
+		display: inline-block;
+		@extend .clearfix;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			float: left;
+
+			.prev,
+			.next {
+				display: none;
+			}
+		}
+
+		a,
+		span {
+			padding: 1em;
+		}
+	}
+}
+
 /* =============================================================================
    Widgets
    ========================================================================== */

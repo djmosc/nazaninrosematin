@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "17908",
+"creatorBuild": "17753",
 "files": {
 	"\/404.php": {
 		"fileType": 8192,
@@ -347,6 +347,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/images\/backgrounds\/shop_header.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 72569,
+		"inputAbbreviatedPath": "\/images\/backgrounds\/shop_header.png",
+		"outputAbbreviatedPath": "\/images\/backgrounds\/shop_header.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/images\/misc\/favicon.png": {
 		"fileType": 32768,
@@ -708,6 +719,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/woocommerce\/archive-product.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/woocommerce\/archive-product.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/woocommerce\/cart\/mini-cart.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -720,7 +740,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Jozsef Francovszky",
+"lastSavedByUser": "DJ Mosca",
 "manualImportLinks": {
 	"\/js\/plugins\/owlcarousel\/owl.carousel.js": [
 		{
