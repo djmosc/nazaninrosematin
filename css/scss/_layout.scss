@@ -66,6 +66,7 @@ body {
 	text-align: center;
 	line-height: 1;
 	margin: 4em 0;
+	@include font-size(10);
 
 	> .inner {
 		padding: 0 10px;
@@ -85,14 +86,23 @@ body {
 		//	border-bottom-color: #000;
 		}
 	}
-	.social-links {
-		float: left;
-		padding: 0 1em;
-		border-right: 1px solid #000;
-	}
-
+	.social-links,
 	.footer-navigation {
 		float: left;
 		padding: 0 1em;
+		margin: 1em 0;
+
+		@include device-width(8) {
+			float: none;
+			display: inline-block;
+		}
 	}
+
+	.social-links {
+		border-right: 1px solid #000;
+
+		@include device-width(8) {
+			border: 0;
+		}
+	}	
 }

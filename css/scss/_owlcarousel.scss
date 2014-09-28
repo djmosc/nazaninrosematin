@@ -185,9 +185,6 @@
 	right: 0;
 	margin-top: -(58px / 2);
 
-	@include device-width(6) {
-		display: none;
-	}
 	
 	.owl-prev,
 	.owl-next {
@@ -207,6 +204,15 @@
 		padding: 0.5em;
 		@include box-sizing(content-box);
 
+		@include device-width(6) {
+			font-size: 1.5em;
+		}
+
+		@include device-width(4) {
+			font-size: 1.4em;
+			opacity: 0.5;
+		}
+
 		&:before {
 			@extend [class^="icon-"];
 			display: block;
@@ -225,12 +231,20 @@
 		&:before {
 			@extend .icon-chevron-right:before;
 		}
+
+		@include device-width(10) {
+			margin: 0;
+		}
 	}
 	
 	.owl-prev {
 		left: 0;
 		margin-left: -1em;
-		
+
+		@include device-width(10) {
+			margin: 0;
+		}
+
 		&:before {
 			@extend .icon-chevron-left:before;
 		}

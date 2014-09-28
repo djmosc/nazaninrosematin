@@ -3,16 +3,43 @@
 		padding: 0 10px;
 	}
 
-	.carousel {
-		.btn {
-			display: block;
-		}
-	}
+	.collection-header {
+		text-align: center;
+		margin: 3em 0;
 
-	.collection-footer {
 		.title {
 			display: inline-block;
 			border-bottom: 1px solid #000;
+			padding: 0.3em 0;
+		}
+	}
+	.carousel {
+
+		img {
+			display: block;
+		}
+
+		.btn {
+			display: block;
+		}
+		.page {
+			display: block;
+			margin: 4em 0 0 0;
+			text-align: center;
+		}
+	}
+}
+
+#archive-product {
+
+	.page-header {
+		margin: 0 10px;
+		background: #e1e3e2 url(../images/backgrounds/shop_header.png) no-repeat 15% top;
+		padding: 8em 20em;
+		
+		.page-title {
+			@include font-size(20);
+			text-align: right;
 		}
 	}
 }

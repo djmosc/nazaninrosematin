@@ -8,6 +8,7 @@
  * @since nazaninrosematin 1.0
  */
 ?>
+		</div>
 	</div><!-- #main .site-main -->
 	
 	<footer id="footer" class="site-footer" role="contentinfo">

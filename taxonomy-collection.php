@@ -1,7 +1,7 @@
 <?php global $wp_query; ?>
 <?php get_header(); ?>
 <section id="taxonomy-collection">
-	<div class="inner container">
+	<div class="inner">
 		<?php if( have_posts() ): ?>
 		<div class="carousel owl-carousel">
 			<?php $i = 0; ?>
@@ -20,9 +20,10 @@
 			<?php $i++; ?>
 			<?php endwhile; ?>
 		</div>
-
-		<?php single_cat_title(); ?>
 		<?php endif; ?>
+		<header class="collection-header">
+			<h5 class="title"><?php single_cat_title(); ?></h5>		
+		</header>
 	</div>
 </section><!-- #taxonomy-collection -->
 <?php get_footer(); ?>
