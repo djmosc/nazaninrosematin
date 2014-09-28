@@ -36,10 +36,57 @@
 		margin: 0 10px;
 		background: #e1e3e2 url(../images/backgrounds/shop_header.png) no-repeat 15% top;
 		padding: 8em 20em;
+		background-size: contain;
+
+		@include device-width(6) {
+			padding: 6em 10em;
+		}
+
+		@include device-width(5) {
+			padding: 5em 8em;
+			background-position: 5% top;
+		}
 		
 		.page-title {
 			@include font-size(20);
 			text-align: right;
+		}
+	}
+
+	.products {
+		.product {
+
+			@include device-width(6) {
+				width: 50%;
+			}
+
+			@include device-width(4) {
+				width: 100%;
+			}
+
+			&:nth-child(1) {
+				margin-left: 33.333%;
+
+				@include device-width(6) {
+					margin-left: 50%;
+				}
+
+				@include device-width(4) {
+					margin-left: 0;
+				}
+			}
+
+			&:nth-child(8) {
+				margin-left: 33.333%;
+
+				@include device-width(6) {
+					margin-left: 50%;
+				}
+
+				@include device-width(4) {
+					margin-left: 0;
+				}
+			}
 		}
 	}
 }

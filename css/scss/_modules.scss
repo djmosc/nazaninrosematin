@@ -95,19 +95,17 @@ blockquote {
 	}
 }
 
-#footer {
-	.navigation {
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			@extend .clearfix;
-		}
+.navigation {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@extend .clearfix;
+	}
 
-		li {
-			padding: 0 1em;
-			float: left;
-		}
+	li {
+		padding: 0 1em;
+		float: left;
 	}
 }
 
@@ -246,7 +244,7 @@ blockquote {
 	@extend .clearfix;
 
 	.product {
-		margin: 2em 0;
+		margin: 20px 0;
 		float: left;
 		width: 33.3333%;
 		padding: 0 10px;
