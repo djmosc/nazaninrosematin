@@ -2,16 +2,6 @@
    Grid
    ========================================================================== */
 
-// .row {
-// 	> .inner {
-// 		margin: 0 -10px;
-// 		overflow: hidden;
-// 		@include device-width(8) {
-// 			margin: 0;
-// 		}
-// 	}
-// }
-
 .clearfix,
 .container {
 	*zoom: 1;
@@ -40,12 +30,12 @@
 .container {
 	@include box-sizing(border-box);
 	width: 80%;
-	max-width: 1200px;
+	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 
-	@include device-width(12) {
+	@include device-width(9) {
 		width: 90%;
 	}
 
