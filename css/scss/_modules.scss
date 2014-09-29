@@ -270,8 +270,6 @@ blockquote {
 			position: absolute;
 			top: 0;
 			left: 0;
-			background: #FFF;
-			padding: 0.5em;
 		}
 
 		h3,
@@ -280,13 +278,12 @@ blockquote {
 			@include font-size(10);
 		}
 
-		.price {
-			ins {
-				text-decoration: none;
-			}
-		}
-
 	}
+}
+
+.onsale {
+	background: #FFF;
+	padding: 0.5em;
 }
 
 .woocommerce-pagination {
@@ -317,9 +314,12 @@ blockquote {
 
 .post-header {
 	border-bottom: 1px solid #ccc;
-	padding: 0 0 2em 0;
 	margin: 0 10px 3em 10px;
 	text-align: center;
+
+	.title {
+		padding: 0 0 2em 0;
+	}
 }
 
 .post-content {
@@ -334,6 +334,31 @@ blockquote {
 	font-size: 0.9em;
 }
 
+.quantity {
+	.plus,
+	.minus {
+		border: none;
+		padding: 1em;
+
+		&:hover {
+			border: none;
+		}
+	}
+
+	.qty {
+		width: 40px;
+		padding: 0.5em;
+	}
+}
+
+.woocommerce-message {
+	margin: 2em 10px 3em 10px;
+	text-align: left;
+
+	a {
+		float: right;
+	}
+}
 /* =============================================================================
    Widgets
    ========================================================================== */

@@ -3,6 +3,11 @@
    ========================================================================== */
 
 button {
+	@include transition(all 0.3s ease);
+	background: none;
+	border: 0;
+	letter-spacing: 2px;
+	@extend .primary-btn;
 
 	&:disabled {
 		opacity: 0.5;	
@@ -235,7 +240,7 @@ button {
 	color: #000;
 	text-transform: uppercase;
 	border-bottom: 1px solid #000;
-	padding-bottom: 8px;
+	padding: 8px 0;
 
 	&:hover {
 		color: #CCC;

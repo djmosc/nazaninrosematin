@@ -223,6 +223,11 @@
 		&:hover {
 			color: #CCC;
 		}
+
+		&.disabled {
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
 		
 	.owl-next {

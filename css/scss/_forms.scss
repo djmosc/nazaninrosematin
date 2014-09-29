@@ -54,8 +54,17 @@ textarea {
 }
 
 input[type=submit],
-input[type=reset] {
+input[type=reset],
+input[type=button]{
+	@include transition(all 0.3s ease);
+	background: none;
+	border: 0;
 	letter-spacing: 2px;
+	@extend .primary-btn;
+
+	&:focus {
+		outline: none;
+	}
 }
 
 button::-moz-focus-inner,
@@ -118,6 +127,16 @@ fieldset {
 		}
 
 	 	.gform_body {
+	 		position: relative;
+
+	 		&:after {
+	 			content: "* Required Fields";
+	 			position: absolute;
+	 			bottom: 2em;
+	 			left: 0;
+	 			color: #ccc;
+	 			line-height: 1;
+	 		}
 
 			.gform_fields {
 				margin: 0;
@@ -135,8 +154,8 @@ fieldset {
 
 				&.left_label {
 					.gfield_label {
-						margin: 0.5em 0;
 						padding-top: 1em;
+						margin: 0 4% 0 0;
 
 						@include device-width(5) {
 							width: 100%;
@@ -158,6 +177,7 @@ fieldset {
 							padding: 0.4em 1em;
 							color: #696969;
 							line-height: 22px;
+							width: 67%;
 
 							@include device-width(5) {
 								width: 100%;
@@ -245,6 +265,7 @@ fieldset {
 
 			&.left_label {
 				padding: 0px 0 10px 31%;
+				text-align: right;
 
 				@include device-width(5) {
 					padding: 0;

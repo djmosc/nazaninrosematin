@@ -9,6 +9,7 @@
 			main.header.init();
 			main.frontpage.init();
 			main.collection.init();
+			main.product.init();
 
 		},
 
@@ -68,6 +69,27 @@
 					center: true,
 					autoWidth: true,
 					margin: 50
+				});
+			}
+		},
+
+		product: {
+			element: $('#single-product'),
+			init: function(){
+				var element = main.product.element;
+
+				if(!element.length) return false;
+
+				var thumbnails = main.product.thumbnails = $('.thumbnails', element);
+				
+				thumbnails.owlCarousel({
+					navText: false,
+					dots: false,
+					nav: true,
+					items: 1,
+					autoWidth: true,
+					margin: 10,
+					stagePadding: 50
 				});
 			}
 		},
