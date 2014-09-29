@@ -136,6 +136,10 @@ fieldset {
 	 			left: 0;
 	 			color: #ccc;
 	 			line-height: 1;
+
+	 			@include device-width(5) {
+	 				display: none;
+	 			}
 	 		}
 
 			.gform_fields {

@@ -1,3 +1,28 @@
+#page {
+
+	.post-header {
+		.title {
+			display: none;
+		}
+	}
+
+	.post-content {
+		padding: 0 18em;
+
+		@include device-width(10) {
+			padding: 0 8em;
+		}
+
+		@include device-width(8) {
+			padding: 0 4em;
+		}
+
+		@include device-width(4) {
+			padding: 0 10px;
+		}
+	}
+}
+
 #taxonomy-collection {
 	> .inner {
 		padding: 0 10px;

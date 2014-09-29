@@ -60,20 +60,7 @@ body {
 	}
 }
 
-#main {
-	#page {
-
-		@include device-width(9) {
-			padding: 0 10px;
-		}
-
-		article {
-			max-width: 480px !important;
-		 	margin: 0 auto;			
-		}
-	}
-
-}
+#main {}
 
 #footer {
 	text-align: center;
