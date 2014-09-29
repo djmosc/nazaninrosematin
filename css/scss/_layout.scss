@@ -41,7 +41,6 @@ body {
 
 			@include device-width(5) {
 				text-align: left;
-				padding-left: 10px;
 			}
 
 			.logo-container {
@@ -49,7 +48,8 @@ body {
 				@include font-size(18);
 
 				@include device-width(5) {
-					@include font-size(13);					
+					@include font-size(13);
+					padding-left: 10px;					
 				}
 
 				.logo {
@@ -62,11 +62,14 @@ body {
 
 #main {
 	#page {
-		max-width: 480px !important;
-	 	margin: 0 auto;
- 			
+
 		@include device-width(9) {
 			padding: 0 10px;
+		}
+
+		article {
+			max-width: 480px !important;
+		 	margin: 0 auto;			
 		}
 	}
 
