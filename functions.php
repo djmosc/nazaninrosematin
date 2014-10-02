@@ -93,6 +93,9 @@ function custom_setup_theme() {
 
 	add_editor_style('css/editor-style.css');
 
+	// Add custom image sizes
+	add_image_size( 'press-release', 200, 270, true);
+
 }
 
 function custom_init(){
@@ -108,6 +111,8 @@ function custom_init(){
 		$press_releases_page = get_field('press_releases_page', 'options');
 
 
+
+
 		if( !empty($press_releases_page->ID) ){
 			$press_releases_uri = get_page_uri($press_releases_page->ID);
 
@@ -119,8 +124,8 @@ function custom_init(){
 					'has_archive' => true, 
 					'hierarchical' => false,
 					'menu_position' => null,
-					'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
-					'plural' => "Press Releases"
+					'supports' => array('title', 'editor', 'thumbnail'),
+					'plural' => "Press Releases"					
 				)
 			);			
 		}

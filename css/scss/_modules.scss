@@ -15,15 +15,15 @@ blockquote {
 
 
 	.page-numbers {
+		padding: 12px;
+		@include font-size(12);
 
 		&.current {
 			cursor: default;
-			color: #FFF;
-			background: #000;
+			color: #000;
 
 			&:hover {
-				color: #FFF;
-				background: #000;
+				color: #000;
 			}
 		}
 	}
@@ -32,11 +32,14 @@ blockquote {
 		&.page-numbers {
 			&:hover {
 				cursor: default;
-				color: #FFF;
-				background: #000;
+				color: #000;
 				
 			}
 		}
+	}
+
+	.next, .prev {
+		display: none;
 	}
 
 	.next {
@@ -360,6 +363,149 @@ blockquote {
 		float: right;
 	}
 }
+
+#template-press {
+	@include device-width(8) {
+		padding: 0 2%;
+	}
+}
+
+
+#accordion {
+     margin-top:10px;
+
+    .press-item {
+     	@extend .clearfix;   
+
+     	&:last-child {
+     		.trigger {
+     			border-bottom: 1px solid #cccccc;
+     		}
+     	}	
+    }
+
+	a.trigger {
+		padding: 25px 1.3%;
+		border-top: 1px solid #cccccc;
+		display: block;
+		color: #000;
+		position: relative;
+		padding-right: 120px;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+
+		@include device-width(5) {
+			padding-right: 50px;
+		}
+
+		.status {
+			position: absolute;
+			right: 0;
+			top: 28px;
+			color: #000;
+			text-transform: uppercase;
+			@extend [class^="icon-"];
+			@include transition(all 0.3s ease);
+			font-weight: 700;
+
+			@include device-width(5) {
+				span {
+					display: none;
+				}
+			}
+
+			&:after {
+				font-size: 6px;
+				margin-left: 22px;
+			}
+
+			&.close {
+				display: none;		
+
+				&:after {
+					@extend .icon-chevron-up:before;
+				}
+			}
+
+			&.read-more {
+
+				&:after {
+					@extend .icon-chevron-down:before;
+				}
+			}
+		}
+
+		&.current, &.first {
+
+			.status {
+
+				&.close {
+					display: block;		
+
+					&:after {
+						@extend .icon-chevron-up:before;
+					}
+				}
+
+				&.read-more {
+					display: none;
+
+					&:after {
+						@extend .icon-chevron-down:before;
+					}
+				}				
+
+			}
+		}
+		// a.trigger :hover
+		&:hover {
+			color: #CCC;
+
+			.status {
+				color: #CCC;
+			}
+		}		
+	} 
+
+	div.content {
+		@extend .clearfix;
+	    display:none;  
+	    padding: 13px 0 50px; 
+	}	
+
+	.description {
+		float: right;
+		color: #ccc;
+
+		@include device-width(5) {
+			margin-bottom: 30px;
+		}
+	}
+
+	.gallery {
+		padding: 0;
+
+		img {
+			width: 30%; 
+			margin: 0 1.3% 3%;
+			@include inline-block;
+			text-align: center;
+
+			@include device-width(7) {
+				width: 45%; 
+				margin: 0 2.1% 3%;				
+			}
+
+			@include device-width(3) {
+				width: 100%; 
+				margin: 0 0 3%;				
+			}			
+		}
+	}
+}
+
+
+
 /* =============================================================================
    Widgets
    ========================================================================== */
@@ -383,7 +529,7 @@ blockquote {
 		.cart-content {
 			display: none;
 			position: absolute;
-			top: 25px;
+			top: 26px;
 			right: 0;
 			width: 450px;
 			background: #FFF;

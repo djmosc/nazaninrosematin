@@ -7,6 +7,11 @@
 
 			main.global.init();
 			main.header.init();
+
+			if ($(window).width() > 800) {
+				main.submenus.init();				
+			}			
+			main.accordion.init();
 			main.frontpage.init();
 			main.collection.init();
 			main.product.init();
@@ -37,6 +42,52 @@
 					e.preventDefault();
 					header.toggleClass('navigation-open');
 				});
+			}
+		},
+
+		submenus: {
+			element: $('ul.sub-menu'),
+			init: function() {
+				var element = main.submenus.element,
+					nav = $('#header-navigation');
+
+				if(element.is(":visible")) {
+					var height = element.outerHeight(),
+						navheight = $('#header-navigation').outerHeight();
+					
+					nav.height(navheight + height);
+				}
+
+			}
+
+		},
+
+		accordion: {
+			element: $('#accordion'),
+			init: function() {
+				var element = main.accordion.element;
+
+				$(".content", element).first().css('display', 'block');
+
+				var link = $('a.trigger', element);
+
+				link.first().addClass('first current');
+
+				link.on('click', function(e) {
+					e.preventDefault();
+					
+					if ($(this).hasClass('current')) {
+					    link.removeClass('current first');
+						$(".content", element).not(a).slideUp('fast');
+					} else {
+					    link.removeClass('current first');
+					    var a = $(this).attr("href");
+						link.removeClass('current');
+					    $(this).addClass('current');
+					    $(a).slideDown('fast');
+					    $(".content", element).not(a).slideUp('fast');						
+					}
+				});				
 			}
 		},
 

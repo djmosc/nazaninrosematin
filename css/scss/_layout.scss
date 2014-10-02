@@ -21,7 +21,7 @@ body {
 }
 
 #header {
-	margin-bottom: 7em;
+	margin-bottom: 27px;
 
 	@include device-width(5) {
 		margin-bottom: 4em;		
@@ -44,7 +44,7 @@ body {
 			}
 
 			.logo-container {
-				padding-bottom: 40px;
+				padding-bottom: 35px;
 				@include font-size(18);
 
 				@include device-width(5) {
