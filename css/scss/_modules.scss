@@ -364,13 +364,6 @@ blockquote {
 	}
 }
 
-#template-press {
-	@include device-width(8) {
-		padding: 0 2%;
-	}
-}
-
-
 #accordion {
      margin-top:10px;
 
@@ -503,7 +496,6 @@ blockquote {
 		}
 	}
 }
-
 
 
 /* =============================================================================
