@@ -210,19 +210,30 @@
 		.product-thumbnail {
 			width: 150px;
 			min-width: auto;
+
 			img {
 				width: auto;
 				min-width: auto;
 				max-width: 100%;
 			}
 
-			@include device-width(5){
+			@include device-width(5) {
 				width: 60px;
 			}
 		}
 
 		.product-name {
 			vertical-align: top;
+
+			.remove {
+				color: #CCC;
+				display: block;
+				margin-top: 15px;				
+				
+				&:hover {
+					color: #000;
+				}
+			}
 		}
 
 		.remove-btn {
@@ -361,6 +372,10 @@
 			float: right;
 			margin: 2em 0 0;
 
+			h2 {
+				display: none;
+			}
+
 			@include device-width(6) {
 				width: 100%;
 				margin-bottom: 4em;
@@ -418,6 +433,13 @@
 		}
 	}
 
+
+	.checkout-button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}	
+
 	.proceed-checkout {
 		margin: 1em 0 10em;
 		padding: 2em 0;
@@ -426,7 +448,6 @@
 		text-align: right;
 		border-top: 1px solid #ccc;
 	}
-
 
 
 

@@ -40,11 +40,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 				?>
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-					<td class="product-remove">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
-						?>
-					</td>
 
 					<td class="product-thumbnail">
 						<?php
@@ -64,6 +59,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							else
 								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', $_product->get_permalink(), $_product->get_title() ), $cart_item, $cart_item_key );
 
+							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">Remove</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
+
 							// Meta data
 							echo WC()->cart->get_item_data( $cart_item );
 
@@ -72,13 +69,6 @@ do_action( 'woocommerce_before_cart' ); ?>
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
 					</td>
-
-					<td class="product-price">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-						?>
-					</td>
-
 					<td class="product-quantity">
 						<?php
 							if ( $_product->is_sold_individually() ) {
@@ -126,7 +116,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> 
 
-				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+
+
+				<?php wp_nonce_field( 'woocommerce-cart' ); ?>					
+
 			</td>
 		</tr>
 
@@ -135,6 +128,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 </table>
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
+
+				<input type="submit" class="checkout-button button alt wc-forward" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
+
+				<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>	
 
 </form>
 
@@ -149,9 +146,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 </div>
 
 <div class="proceed-checkout">
-	<input type="submit" class="checkout-button button alt wc-forward" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
 
-	<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>	
+
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

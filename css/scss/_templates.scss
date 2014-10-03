@@ -17,6 +17,7 @@
 
 		.woocommerce-cart &, .woocommerce-checkout & {
 			padding: 0;
+			position: relative;
 
 			@include device-width(10) {
 				padding: 0 10px;
