@@ -3,7 +3,13 @@
 	.post-header {
 		.title {
 			display: none;
+
+			.woocommerce-cart & {
+				display: block;
+			}			
 		}
+
+
 	}
 
 	.post-content {
@@ -11,6 +17,10 @@
 
 		.woocommerce-cart &, .woocommerce-checkout & {
 			padding: 0;
+
+			@include device-width(10) {
+				padding: 0 10px;
+			}			
 		}
 
 		@include device-width(10) {
@@ -230,7 +240,6 @@
 		padding: 0 2%;
 	}
 }
-
 
 #template-about {
 

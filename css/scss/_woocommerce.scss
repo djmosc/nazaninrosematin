@@ -152,8 +152,8 @@
 			position: relative;
 		}
 
-		.cart_item {
-
+		.actions {
+			text-align: right;
 		}
 
 		
@@ -250,10 +250,37 @@
 		
 		th, td {
 			padding-left: 0;
-			vertical-align: middle;
-			border-top: none !important;
-			border-left: none !important;
-			border-right: none !important;
+			vertical-align: top;
+			border: none;
+
+			&.product-remove {
+				vertical-align: middle;
+			}
+
+			&.product-name, &.product-price, &.product-quantity {
+				border-right: 1px solid #ccc;
+				text-align: center;
+			}
+
+			&.product-name {
+				text-align: left;
+
+				a {
+					color: #000;
+
+					&:hover {
+						color: #CCC;
+					}
+				}
+			}			
+
+			&.product-subtotal {
+				text-align: right;
+			}			
+		}
+
+		tr.bottom {
+			border-bottom: 1px solid #ccc;
 		}
 		
 
@@ -272,7 +299,6 @@
 
 	.cart-collaterals {
 		width: 100%;
-		margin: 1em 0 10em 0;
 		@extend .clearfix;
 		.related {
 			width: 30.75%;
@@ -293,7 +319,6 @@
 		}
 		.shipping_calculator {
 			@extend .clearfix;
-			clear: right;
 			margin: 2em 0 0 0;
 			float: left;
 			text-align: left;
@@ -332,8 +357,9 @@
 		}
 		.cart_totals {
 			text-align: right;
-			width: auto;
-			float: none;
+			width: 48%;
+			float: right;
+			margin: 2em 0 0;
 
 			@include device-width(6) {
 				width: 100%;
@@ -390,6 +416,15 @@
 				font-size: 0.92em;
 			}
 		}
+	}
+
+	.proceed-checkout {
+		margin: 1em 0 10em;
+		padding: 2em 0;
+		width: 100%;
+		clear: both;
+		text-align: right;
+		border-top: 1px solid #ccc;
 	}
 
 
