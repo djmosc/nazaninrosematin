@@ -148,7 +148,7 @@
 		th,
 		td {
 			vertical-align: top;
-			color: #262626;
+			color: #ccc;
 			position: relative;
 		}
 
@@ -471,6 +471,12 @@
 			label {
 				display:block;
 				@include font-size(8);
+
+				.woocommerce-checkout & {
+					@include font-size(10);
+					color: #ccc;
+					margin: 1em 0 2em;
+				}				
 			}
 			label.hidden {
 				visibility:hidden;
@@ -489,16 +495,11 @@
 				margin: 0;
 			}
 			.required {
-				color: #850000;
+				color: #fd0f0d;
 				font-weight:bold;
 				border: 0;
 			}
-			.input-checkbox {
-				display: inline;
-				margin: -2px 2px 0 0;
-				text-align: center;
-				vertical-align: middle;
-			}
+
 			label.checkbox {
 				display: inline;
 			}
@@ -516,6 +517,10 @@
 				-moz-box-shadow:none;
 				-webkit-box-shadow:none;
 				box-shadow:none;
+
+				.woocommerce-checkout & {
+					height: 21em;
+				}
 			}
 			&.validate-required.woocommerce-validated {
 				input.input-text {
@@ -620,15 +625,63 @@
 	/* =Checkout
 	-------------------------------------------------------------- */
 
-	.checkout {
-		margin: 0 0 2em 0;
-		h3 {
-			@include font-size(20);
-			border-bottom: 1px solid #dcdcdc;
+	&.woocommerce-checkout {
+		.woocommerce-info {
+			width: 48%;
+			border: 1px solid #000;
+			padding: 1em 1.5em;
 			text-transform: uppercase;
-			padding: 0 0 0.5em 0;
+
+			.showlogin {
+				color: #ff0103;
+			}
+		}
+
+		form.login {
+			width: 48%;
+			background: none;
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 2em;
+
+			label.inline {
+				display: none;
+			}
+
+			.inputs, .lost_password {
+				@include inline-block;
+				margin-right: 15px;
+
+				.rememberme {
+					display: none;
+				}				
+			}	
+
+			.lost_password {
+				margin-left: 20px;
+
+				a {
+					@extend .primary-btn;
+				}
+			}				
+		}
+	}
+
+	.checkout {
+		margin: 10em 0 2em 0;
+		h3 {
+			@include font-size(12);
+			font-weight: 700;
+			border-bottom: 1px solid #dcdcdc;
+			border-top: 1px solid #dcdcdc;
+			text-transform: uppercase;
+			padding: 2em 0;
 			float: none;
 			margin: 0 0 1em 0;
+
+			label {
+				@include font-size(12);
+				font-weight: 700;				
+			}
 		}
 
 		.notes {
@@ -713,8 +766,8 @@
 			padding: 1em;
 		}
 		#place_order {
-			float: right;
-			margin: 0;
+			float: left;
+			margin: 2em 0 0;
 		}
 		.terms {
 			padding: 0 1em 0;
@@ -764,6 +817,7 @@
 			}
 		}
 	}
+
 
 	#order_review {
 		margin: 3em 0 10em 0;

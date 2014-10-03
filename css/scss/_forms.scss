@@ -2,6 +2,27 @@
    Forms
    ========================================================================== */
 
+::-webkit-input-placeholder { 
+	text-transform: uppercase; 
+	@include font-size(12);
+	color: #ccc;
+}
+::-moz-placeholder { 
+	text-transform: uppercase; 
+	@include font-size(12);
+	color: #ccc;
+} /* firefox 19+ */
+:-ms-input-placeholder { 
+	text-transform: uppercase; 
+	@include font-size(12);
+	color: #ccc;
+} /* ie */
+input:-moz-placeholder { 
+	text-transform: uppercase; 
+	@include font-size(12);
+	color: #ccc;
+}   
+
 input[type=text],
 input[type=email],
 input[type=url],
@@ -32,22 +53,79 @@ textarea {
 	border: 1px solid #b0b0b0;
 	padding: 0.6em;
 	max-width: 100%;
+
+	.woocommerce-checkout & {
+		border: 1px solid #ccc;		
+		color: #ccc;
+		@include font-size(12);
+		font-weight: normal;
+		padding: 1.5em 2em;
+		letter-spacing: 2px;
+	}	
 }
 
-select {
+select, .chosen-container-single .chosen-single {
 	@include border-radius(0);
 	-webkit-appearance: none;
 	display: inline-block;
-	border: 1px solid #b0b0b0;
-	padding: 0.6em;
-	@include font-size(15);
-	background: #f4f4f4;
+	border: 1px solid #ccc;
+	padding: 1.5em 2em;
+	@include font-size(12);
+	background: #FFF;
 	position: relative;
+	width: 100%;
+	color: #ccc;
+	height: 51px !important;
+	box-shadow: none;
+
+	span {
+		line-height: 1;
+	}
+
+	 div {
+	 	@extend [class*=" icon-"];
+	 	
+	 	&:after {
+			@extend .icon-chevron-down:before;
+			@include font-size(10);
+			margin: 19px;
+			float: right;
+	 	}
+
+	 	b {
+			display: none;
+		}
+	 }
+
+
+	.woocommerce-checkout & {
+		border: 1px solid #ccc;
+	}
 	
 	@media screen and (-webkit-min-device-pixel-ratio:0) {
 		padding-right: 40px;
 	}
 }
+
+.chosen-container-single {
+
+	.chosen-drop {
+		margin-top: -5px;
+		border: 1px solid #ccc;
+
+		li {
+			color: #ccc;
+
+			&:hover {
+				color: #000;
+				background: none;
+			}
+		}
+	}
+
+} 
+
+
 
 textarea {
 	height: 200px;
@@ -283,4 +361,29 @@ fieldset {
 	 		}
 	 	}
 	}
+}
+input[type=checkbox] {
+	display: none;
+}
+
+input[type=checkbox] + label {
+
+	&:before {
+		content: '';
+       	height: 13px;
+       	width: 13px;
+       	display: block;
+       	padding: 0 0 0 0px;		
+       	background: url('../images/buttons/checkbox.jpg') left top no-repeat;
+       	float: left;
+       	margin: 0 8px 0 0;
+
+	}
+}
+   
+input[type=checkbox]:checked + label {
+	&:before {
+		content: '';
+       	background: url('../images/buttons/checkbox.jpg') left bottom no-repeat;
+	}	
 }
