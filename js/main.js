@@ -69,6 +69,16 @@
 
 				if(!element.length) return false;
 
+				var carousel = main.frontpage.carousel = $('.carousel', element);
+
+				carousel.owlCarousel({
+					navText: false,
+					dots: false,
+					nav: true,
+					items: 1,
+					loop: true,
+					margin: 50
+				});
 
 			}
 		},

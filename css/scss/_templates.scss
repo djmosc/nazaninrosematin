@@ -1,3 +1,18 @@
+#front-page {
+	> .inner {
+		padding: 0 10px;
+	}
+
+	.carousel {
+
+		img {
+			display: block;
+		}
+
+	}
+
+}
+
 #page {
 
 	.post-header {
@@ -280,7 +295,7 @@
 
 		.gallery {
 			@extend .clearfix;
-			
+
 			img {
 				width: 30%; 
 				margin: 0 3% 3% 0;
