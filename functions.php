@@ -73,6 +73,8 @@ add_filter( 'woocommerce_taxonomy_args_product_cat', '__return_false');
 
 add_filter( 'woocommerce_taxonomy_objects_product_cat', '__return_false');
 
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'custom_woocommerce_product_single_add_to_cart_text');
+
 //Custom shortcodes
 
 
@@ -92,9 +94,6 @@ function custom_setup_theme() {
 	) );
 
 	add_editor_style('css/editor-style.css');
-
-	// Add custom image sizes
-	add_image_size( 'press-release', 200, 270, true);
 
 }
 
@@ -124,7 +123,7 @@ function custom_init(){
 					'has_archive' => true, 
 					'hierarchical' => false,
 					'menu_position' => null,
-					'supports' => array('title', 'editor', 'thumbnail'),
+					'supports' => array('title', 'editor'),
 					'plural' => "Press Releases"					
 				)
 			);			
@@ -189,6 +188,7 @@ function custom_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('modernizr', $template_directory_uri.'/js/libs/modernizr.min.js');
 	wp_enqueue_script('owlcarousel', $template_directory_uri.'/js/plugins/jquery.owlcarousel.js', array('jquery'), '', true);
+	wp_register_script('zoom', $template_directory_uri.'/js/plugins/jquery.elevatezoom.js', array('jquery'), '', true);
 	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery'), '', true);
 }
 
@@ -207,4 +207,8 @@ function custom_pre_get_posts( $query ) {
 	}
 
 	return $query;
+}
+
+function custom_woocommerce_product_single_add_to_cart_text(){
+	return __("Add to shopping bag");
 }

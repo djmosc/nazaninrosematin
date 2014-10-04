@@ -16,6 +16,11 @@
 	}
 }
 
+@mixin icon($icon){
+	@extend [class^="icon-"];
+	@extend .icon-#{$icon}:before;
+}
+
 @mixin font-size($size){
 	font-size: ($size) + px;
 	font-size: ($size / 10) + rem;

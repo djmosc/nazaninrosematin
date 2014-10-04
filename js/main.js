@@ -11,11 +11,11 @@
 			if ($(window).width() > 800) {
 				main.submenus.init();				
 			}			
-			main.accordion.init();
+			
 			main.frontpage.init();
 			main.collection.init();
 			main.product.init();
-
+			main.press.init();
 		},
 
 		loaded: function(){
@@ -62,35 +62,6 @@
 
 		},
 
-		accordion: {
-			element: $('#accordion'),
-			init: function() {
-				var element = main.accordion.element;
-
-				$(".content", element).first().css('display', 'block');
-
-				var link = $('a.trigger', element);
-
-				link.first().addClass('first current');
-
-				link.on('click', function(e) {
-					e.preventDefault();
-					
-					if ($(this).hasClass('current')) {
-					    link.removeClass('current first');
-						$(".content", element).not(a).slideUp('fast');
-					} else {
-					    link.removeClass('current first');
-					    var a = $(this).attr("href");
-						link.removeClass('current');
-					    $(this).addClass('current');
-					    $(a).slideDown('fast');
-					    $(".content", element).not(a).slideUp('fast');						
-					}
-				});				
-			}
-		},
-
 		frontpage: {
 			element: $('#front-page'),
 			init: function(){
@@ -131,17 +102,94 @@
 
 				if(!element.length) return false;
 
-				var thumbnails = main.product.thumbnails = $('.thumbnails', element);
+				main.product.images.init();
+				main.product.thumbnails.init();
 				
-				thumbnails.owlCarousel({
-					navText: false,
-					dots: false,
-					nav: true,
-					items: 1,
-					autoWidth: true,
-					margin: 10,
-					stagePadding: 50
-				});
+			},
+			images: {
+				element: $('.images'),
+				init: function(){
+
+					var element = main.product.images.element;
+
+					if(!$.fn.elevateZoom) return false;
+					
+					var image = $('img', element);
+					
+					image.on('load', function(){
+						image.elevateZoom({
+							tint:true,
+							tintColour:'#FFF',
+							tintOpacity:0.5,
+							borderSize: 0,
+							zoomWindowPosition: 1,
+							zoomWindowOffetx: 20,
+							zoomWindowFadeIn: 500,
+							zoomWindowFadeOut: 500,
+							zoomWindowWidth: 410,
+							zoomWindowHeight: image.height(),
+							lensFadeIn: 500,
+							lensFadeOut: 500,
+							easing: true,
+							lensBorderSize: 0,
+							cursor: 'pointer',
+							responsive: true
+						});
+					});
+				}
+			},
+			thumbnails: {
+				element: $('.thumbnails'),
+				init: function() {
+
+					var element = main.product.thumbnails.element;
+
+					if(!$.fn.owlCarousel) return false;
+					
+					element.owlCarousel({
+						navText: false,
+						dots: false,
+						nav: true,
+						items: 1,
+						autoWidth: true,
+						margin: 10,
+						stagePadding: 50
+					});
+				}
+			}
+		},
+
+		press: {
+			element: $('#template-press-release'),
+			init: function(){
+				var element = main.press.element;
+
+				if(!element.length) return false;
+
+				main.accordion.init();
+			}
+		},
+
+		accordion: {
+			element: $('.accordion'),
+			init: function() {
+				var element = main.accordion.element;
+
+				if(!element.length) return false;
+
+				var btns = $('.btn', element),
+					items = $('.item', element);
+
+				btns.on('click', function(e) {
+					e.preventDefault();
+					
+					var btn = $(this),
+						id = btn.attr('href'),
+						item = items.filter(id);
+					
+					items.removeClass('current');
+					item.addClass('current');
+				});				
 			}
 		},
 

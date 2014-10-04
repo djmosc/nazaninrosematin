@@ -240,80 +240,6 @@ blockquote {
 }
 
 
-.products {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	@extend .clearfix;
-
-	.product {
-		margin: 20px 0;
-		float: left;
-		width: 33.3333%;
-		padding: 0 10px;
-		text-align: center;
-
-		a {
-			position: relative;
-			display: block;
-			color: #000;
-			
-
-			&:hover {
-				color: #CCC;
-			}
-		}
-
-		img {
-			width: 100%;
-			margin: 0 0 1em 0;
-		}
-
-		.onsale {
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-
-		h3,
-		.price {
-			margin: 0.4em 0;
-			@include font-size(10);
-		}
-
-	}
-}
-
-.onsale {
-	background: #FFF;
-	padding: 0.5em;
-}
-
-.woocommerce-pagination {
-	text-align: center;
-
-	.page-numbers {
-		display: inline-block;
-		@extend .clearfix;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-
-		li {
-			float: left;
-
-			.prev,
-			.next {
-				display: none;
-			}
-		}
-
-		a,
-		span {
-			padding: 1em;
-		}
-	}
-}
 
 .post-header {
 	border-bottom: 1px solid #ccc;
@@ -338,54 +264,31 @@ blockquote {
 	}
 }
 
-.quantity {
-	.plus,
-	.minus {
-		border: none;
-		padding: 1em;
+.accordion {
 
-		&:hover {
-			border: none;
-		}
-	}
-
-	.qty {
-		width: 40px;
-		padding: 0.5em;
-	}
-}
-
-.woocommerce-message {
-	margin: 2em 10px 3em 10px;
-	text-align: left;
-
-	a {
-		float: right;
-	}
-}
-
-#accordion {
-     margin-top:10px;
-
-    .press-item {
+    .item {
      	@extend .clearfix;   
 
      	&:last-child {
-     		.trigger {
+     		.btn {
      			border-bottom: 1px solid #cccccc;
      		}
-     	}	
+     	}
+
+     	&.current {
+     		.content {
+     			max-height: 500px;
+     		}
+     	}
     }
 
-	a.trigger {
-		padding: 25px 1.3%;
+	.btn {
+		padding: 25px 0;
 		border-top: 1px solid #cccccc;
 		display: block;
 		color: #000;
 		position: relative;
 		padding-right: 120px;
-		font-weight: 700;
-		letter-spacing: 1.5px;
 
 		@include device-width(5) {
 			padding-right: 50px;
@@ -399,8 +302,7 @@ blockquote {
 			text-transform: uppercase;
 			@extend [class^="icon-"];
 			@include transition(all 0.3s ease);
-			font-weight: 700;
-
+			
 			@include device-width(5) {
 				span {
 					display: none;
@@ -460,41 +362,13 @@ blockquote {
 		}		
 	} 
 
-	div.content {
-		@extend .clearfix;
-	    display:none;  
-	    padding: 13px 0 50px; 
+	.content {
+		@include transition(all 0.3s ease);
+	    max-height: 0;
+	    overflow: hidden;
 	}	
 
-	.description {
-		float: right;
-		color: #ccc;
-
-		@include device-width(5) {
-			margin-bottom: 30px;
-		}
-	}
-
-	.gallery {
-		padding: 0;
-
-		img {
-			width: 30%; 
-			margin: 0 1.3% 3%;
-			@include inline-block;
-			text-align: center;
-
-			@include device-width(7) {
-				width: 45%; 
-				margin: 0 2.1% 3%;				
-			}
-
-			@include device-width(3) {
-				width: 100%; 
-				margin: 0 0 3%;				
-			}			
-		}
-	}
+	
 }
 
 

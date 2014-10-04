@@ -79,32 +79,26 @@
 
 	table.shop_attributes {
 		border: 0;
-		border-top: 1px dotted rgba(0,0,0,0.1);
-		margin-bottom: 1.618em;
+		border-top: 1px solid #f2f2f2;
 		width: 100%;
+		text-align: left;
+		color: #ccc;
+
 		th {
 			width: 150px;
-			font-weight:bold;
-			padding: 8px;
+			padding: 0.6em 0;
 			border-top: 0;
-			border-bottom: 1px dotted rgba(0,0,0,0.1);
+			border-bottom: 1px solid #f2f2f2;
 			margin: 0;
 			line-height: 1.5em;
+			color: #666;
 		}
 		td {
-			font-style: italic;
-			padding: 0;
+			padding: 0.6em 0;
 			border-top: 0;
-			border-bottom: 1px dotted rgba(0,0,0,0.1);
+			border-bottom: 1px solid #f2f2f2;
 			margin: 0;
 			line-height: 1.5em;
-			p {
-				margin: 0;
-				padding: 8px 0;
-			}
-		}
-		.alt td, .alt th {
-			background: rgba(0,0,0,0.025);
 		}
 	}
 
@@ -854,11 +848,107 @@
 }
 
 
+.products {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	@extend .clearfix;
 
+	.product {
+		margin: 20px 0;
+		float: left;
+		width: 33.3333%;
+		padding: 0 10px;
+		text-align: center;
 
+		a {
+			position: relative;
+			display: block;
+			color: #000;
+			
 
+			&:hover {
+				color: #CCC;
+			}
+		}
 
+		img {
+			width: 100%;
+			margin: 0 0 1em 0;
+		}
 
+		.onsale {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		h3,
+		.price {
+			margin: 0.4em 0;
+			@include font-size(10);
+		}
+
+	}
+}
+
+.onsale {
+	background: #FFF;
+	padding: 0.5em;
+}
+
+.woocommerce-pagination {
+	text-align: center;
+
+	.page-numbers {
+		display: inline-block;
+		@extend .clearfix;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			float: left;
+
+			.prev,
+			.next {
+				display: none;
+			}
+		}
+
+		a,
+		span {
+			padding: 1em;
+		}
+	}
+}
+
+.quantity {
+	.plus,
+	.minus {
+		border: none;
+		padding: 1em;
+
+		&:hover {
+			border: none;
+		}
+	}
+
+	.qty {
+		width: 40px;
+		padding: 0.5em;
+	}
+}
+
+.woocommerce-message {
+	margin: 2em 10px 3em 10px;
+	text-align: left;
+
+	a {
+		float: right;
+		padding-top: 0;
+	}
+}
 
 
 
