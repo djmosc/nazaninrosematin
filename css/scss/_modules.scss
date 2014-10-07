@@ -138,6 +138,53 @@ blockquote {
 
 .accordion {
 
+	.btn {
+		padding: 25px 0;
+		border-top: 1px solid #cccccc;
+		display: block;
+		color: #000;
+		position: relative;
+		padding-right: 120px;
+
+		&:before {
+			content: 'Read More';
+			position: absolute;
+			right: 20px;
+			top: 28px;
+			color: #000;
+			text-transform: uppercase;
+			@extend [class^="icon-"];
+			@include transition(all 0.3s ease);
+			
+			@include device-width(5) {				
+					content: '';
+			}			
+		}
+
+		&:after {
+			@extend [class^="icon-"];
+			@extend .icon-chevron-down:before;
+			position: absolute;
+			right: 0;
+			top: 31px;
+			color: #000;
+			font-size: 6px;		
+		}
+
+		@include device-width(5) {
+			padding-right: 50px;
+		}
+
+		// a.trigger :hover
+		&:hover {
+			color: #CCC;
+
+			&:before, &:after {
+				color: #CCC;
+			}
+		}		
+	} 
+
     .item {
      	@extend .clearfix;   
 
@@ -148,91 +195,25 @@ blockquote {
      	}
 
      	&.current {
+
+     		.btn {
+     			&:before {
+     				content: 'Close';
+
+					@include device-width(5) {				
+							content: '';
+					}     				
+     			}
+
+				&:after {
+					@extend .icon-chevron-up:before;
+				}     			
+     		}
      		.content {
      			max-height: 500px;
      		}
      	}
-    }
-
-	.btn {
-		padding: 25px 0;
-		border-top: 1px solid #cccccc;
-		display: block;
-		color: #000;
-		position: relative;
-		padding-right: 120px;
-
-		@include device-width(5) {
-			padding-right: 50px;
-		}
-
-		.status {
-			position: absolute;
-			right: 0;
-			top: 28px;
-			color: #000;
-			text-transform: uppercase;
-			@extend [class^="icon-"];
-			@include transition(all 0.3s ease);
-			
-			@include device-width(5) {
-				span {
-					display: none;
-				}
-			}
-
-			&:after {
-				font-size: 6px;
-				margin-left: 22px;
-			}
-
-			&.close {
-				display: none;		
-
-				&:after {
-					@extend .icon-chevron-up:before;
-				}
-			}
-
-			&.read-more {
-
-				&:after {
-					@extend .icon-chevron-down:before;
-				}
-			}
-		}
-
-		&.current, &.first {
-
-			.status {
-
-				&.close {
-					display: block;		
-
-					&:after {
-						@extend .icon-chevron-up:before;
-					}
-				}
-
-				&.read-more {
-					display: none;
-
-					&:after {
-						@extend .icon-chevron-down:before;
-					}
-				}				
-
-			}
-		}
-		// a.trigger :hover
-		&:hover {
-			color: #CCC;
-
-			.status {
-				color: #CCC;
-			}
-		}		
-	} 
+    }	
 
 	.content {
 		@include transition(all 0.3s ease);

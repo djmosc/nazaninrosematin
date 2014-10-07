@@ -14,8 +14,6 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="<?php the_id(); ?>" class="item press-item <?php echo ($i == 0) ? 'current' : ''; ?>">	
 				    <a href="#<?php the_id(); ?>" class="btn"><?php the_title(); ?>
-						<span class="status close"><span>Close</span></span>
-						<span class="status read-more"><span>Read More</span></span>
 				    </a>
 				    <div class="content" >
 				    	<div class="inner clearfix">
