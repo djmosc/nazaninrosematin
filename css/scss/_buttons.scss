@@ -237,6 +237,8 @@ button {
 }
 
 .primary-btn {
+	display: inline-block;
+	vertical-align: middle;
 	color: #000;
 	text-transform: uppercase;
 	border-bottom: 1px solid #000;

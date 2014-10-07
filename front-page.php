@@ -8,7 +8,7 @@
 			<?php if( $images = get_field('images') ): ?>
 		    	<?php foreach( $images as $image ): ?>
 			<div class="item">
-				<img src="<?php echo bfi_thumb($image['url'], array('width' => 900, 'height' => 500) ); ?>" alt="<?php echo $image['alt']; ?>" />
+				<img src="<?php echo bfi_thumb($image['url'], array('width' => 900, 'height' => 580) ); ?>" alt="<?php echo $image['alt']; ?>" />
 			</div>
 				<?php endforeach; ?>
 			<?php endif; ?>

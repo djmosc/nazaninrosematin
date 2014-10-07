@@ -7,11 +7,6 @@
 
 			main.global.init();
 			main.header.init();
-
-			if ($(window).width() > 800) {
-				main.submenus.init();				
-			}			
-			
 			main.frontpage.init();
 			main.collection.init();
 			main.product.init();
@@ -44,24 +39,7 @@
 				});
 			}
 		},
-
-		submenus: {
-			element: $('ul.sub-menu'),
-			init: function() {
-				var element = main.submenus.element,
-					nav = $('#header-navigation');
-
-				if(element.is(":visible")) {
-					var height = element.outerHeight(),
-						navheight = $('#header-navigation').outerHeight();
-					
-					nav.height(navheight + height);
-				}
-
-			}
-
-		},
-
+	
 		frontpage: {
 			element: $('#front-page'),
 			init: function(){
@@ -74,10 +52,11 @@
 				carousel.owlCarousel({
 					navText: false,
 					dots: false,
-					nav: true,
+					nav: false,
 					items: 1,
-					loop: true,
-					margin: 50
+					margin: 0,
+					animateOut: 'fadeOut',
+					autoplay:true
 				});
 
 			}

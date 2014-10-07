@@ -16,11 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <div class="top">
 	<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?><?php _e(' Added to The Bag') ?>
 </div>
+<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 
-<ul class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
+<ul class="cart_list product_list_widget">
 
-	<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
-
+	
 		<?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
@@ -55,13 +55,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			}
 		?>
 
-	<?php else : ?>
-
-		<li class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></li>
-
-	<?php endif; ?>
 
 </ul><!-- end product list -->
+<?php endif; ?>
 
 <?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 

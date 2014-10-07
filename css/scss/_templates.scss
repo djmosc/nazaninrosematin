@@ -102,6 +102,7 @@
 		.title {
 			@include font-size(20);
 			text-align: right;
+			padding: 0;
 		}
 	}
 
@@ -220,6 +221,7 @@
 		.entry-title {
 			color: #000;
 			margin: 2.5em 0;
+			@include font-size(15);
 		}
 
 		.product_meta {
@@ -317,6 +319,22 @@
 }
 
 #template-about {
+	.post-header {
+		.title {
+			display: none;
 
+			.woocommerce-cart & {
+				display: block;
+			}			
+		}
+	}
+
+	.image,
+	.content {
+		@include device-width(6) {
+			float: none;
+			width: auto;
+		}
+	}
 }
 
