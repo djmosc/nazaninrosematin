@@ -76,9 +76,9 @@
 					dots: false,
 					nav: true,
 					items: 1,
-					loop: true,
+					loop: false,
 					center: true,
-					autoWidth: true,
+					//autoWidth: true,
 					margin: 50
 				});
 			}
