@@ -53,18 +53,20 @@ textarea {
 	border: 1px solid #b0b0b0;
 	padding: 0.6em;
 	max-width: 100%;
-
-	.woocommerce-checkout & {
-		border: 1px solid #ccc;		
-		color: #ccc;
-		@include font-size(12);
-		font-weight: normal;
-		padding: 1.5em 2em;
-		letter-spacing: 2px;
-	}	
 }
 
-select, .chosen-container-single .chosen-single {
+select {
+	@include border-radius(0px);
+	border: 1px solid #ccc;
+	@include font-size(12);
+	background: #FFF url(../images/icons/dropdown.jpg) 90% center no-repeat;
+	-webkit-appearance: none;
+	-moz-webkit-appearance: none;
+	-ms-webkit-appearance: none;
+	-o-webkit-appearance: none;
+}
+
+.chosen-container-single .chosen-single {
 	@include border-radius(0);
 	-webkit-appearance: none;
 	display: inline-block;
@@ -122,8 +124,15 @@ select, .chosen-container-single .chosen-single {
 			}
 		}
 	}
-
 } 
+
+.chosen-container .chosen-drop {
+	box-shadow: none
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+	background: #FFF;
+}
 
 
 
@@ -318,9 +327,10 @@ fieldset {
 							background: #FFF;
 							border: 1px solid #cccccc;
 							@include font-size(13);
-							padding: 0.4em 1em;
+							padding: 0.4em;
 							color: #696969;
 							line-height: 22px;
+							letter-spacing: 1px;
 						}
 					}
 

@@ -266,6 +266,12 @@
 			display: inline-block;
 			vertical-align: middle;
 		}
+
+		select {
+			padding: 1em;
+			height: 40px !important;
+			line-height: 1;			
+		}
 	}
 }
 
