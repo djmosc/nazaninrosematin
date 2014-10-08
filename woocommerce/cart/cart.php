@@ -32,6 +32,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 		<?php
+		$cart_array = WC()->cart->get_cart();
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -70,6 +71,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 					<td class="product-quantity">
+						<label for="cart"><?php _e('Quantity'); ?></label>
 						<?php
 							if ( $_product->is_sold_individually() ) {
 								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -92,9 +94,18 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 				</tr>
-				<tr class="bottom">
+				<tr class="bottom <?php if ($cart_item === end($cart_array)): ?>last<?php endif; ?>">
+					<td></td>
+					<td></td>
+					<td></td>
 					<td></td>
 				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>				
 				<?php
 			}
 		}
