@@ -134,6 +134,10 @@ blockquote {
 			margin-top: 0;
 		}
 	}
+
+	.woocommerce {
+		@include font-size(12);
+	}
 }
 
 .accordion {

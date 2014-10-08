@@ -134,7 +134,11 @@ select {
 	background: #FFF;
 }
 
-
+.chosen-search {
+	input {
+		padding: 0.5em !important;
+	}
+}
 
 textarea {
 	height: 200px;

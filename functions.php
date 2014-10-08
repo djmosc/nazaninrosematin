@@ -58,6 +58,8 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 
 remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
 
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
 
 // Custom Filters
 
