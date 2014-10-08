@@ -1,6 +1,8 @@
+window.main = {};
+
 ;(function($) {
 
-	window.main = {
+	main = {
 		w: $(window),
 		d: $(document),
 		init: function(){
@@ -103,27 +105,34 @@
 
 					if(!$.fn.elevateZoom) return false;
 					
-					var image = $('img', element);
+					var image = main.product.images.image = $('img', element);
 					
 					image.on('load', function(){
-						image.elevateZoom({
-							tint:true,
-							tintColour:'#FFF',
-							tintOpacity:0.5,
-							borderSize: 0,
-							zoomWindowPosition: 1,
-							zoomWindowOffetx: 20,
-							zoomWindowFadeIn: 500,
-							zoomWindowFadeOut: 500,
-							zoomWindowWidth: 410,
-							zoomWindowHeight: image.height(),
-							lensFadeIn: 500,
-							lensFadeOut: 500,
-							easing: true,
-							lensBorderSize: 0,
-							cursor: 'pointer',
-							responsive: true
-						});
+						main.product.images.loaded();
+					});
+				},
+				load: function(url){
+					main.product.images.image.attr('src', url).data('zoom-image', url);
+				},
+				loaded: function(){
+					var image = main.product.images.image;
+					image.elevateZoom({
+						tint:true,
+						tintColour:'#FFF',
+						tintOpacity:0.5,
+						borderSize: 0,
+						zoomWindowPosition: 1,
+						zoomWindowOffetx: 20,
+						zoomWindowFadeIn: 500,
+						zoomWindowFadeOut: 500,
+						zoomWindowWidth: 410,
+						zoomWindowHeight: image.height(),
+						lensFadeIn: 500,
+						lensFadeOut: 500,
+						easing: true,
+						lensBorderSize: 0,
+						cursor: 'pointer',
+						responsive: true
 					});
 				}
 			},
@@ -143,6 +152,12 @@
 						autoWidth: true,
 						margin: 10,
 						stagePadding: 50
+					});
+
+					$('a', element).on('click', function(e){
+						e.preventDefault();
+						var url = $(this).attr('href');
+						main.product.images.load(url);
 					});
 				}
 			}
