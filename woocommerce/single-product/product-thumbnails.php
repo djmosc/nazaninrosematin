@@ -13,7 +13,7 @@ global $post, $product, $woocommerce;
 
 $attachment_ids = $product->get_gallery_attachment_ids();
 
-if ( $attachment_ids && count($attachment_ids) > 1 ) {
+if ( $attachment_ids ) {
 	?>
 	<div class="thumbnails owl-carousel thumbnails-<?php echo count($attachment_ids); ?>"><?php
 

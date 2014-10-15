@@ -34,6 +34,8 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_thum
 
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20 );
 
+add_action( 'admin_menu', 'custom_admin_menu' );
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
@@ -213,4 +215,9 @@ function custom_pre_get_posts( $query ) {
 
 function custom_woocommerce_product_single_add_to_cart_text(){
 	return __("Add to shopping bag");
+}
+
+function custom_admin_menu(){
+	//remove_menu_page( 'index.php' )
+	//remove_menu_page( 'edit-comments.php' );
 }

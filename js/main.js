@@ -105,7 +105,7 @@ window.main = {};
 
 					if(!$.fn.elevateZoom) return false;
 					
-					var image = main.product.images.image = $('img', element);
+					var image = main.product.images.image = $('.woocommerce-main-image img', element);
 					
 					image.on('load', function(){
 						main.product.images.loaded();
@@ -116,6 +116,8 @@ window.main = {};
 				},
 				loaded: function(){
 					var image = main.product.images.image;
+
+					$('.zoomContainer').remove();
 					image.elevateZoom({
 						tint:true,
 						tintColour:'#FFF',
@@ -144,14 +146,14 @@ window.main = {};
 
 					if(!$.fn.owlCarousel) return false;
 					
+
 					element.owlCarousel({
 						navText: false,
 						dots: false,
 						nav: true,
-						items: 1,
-						autoWidth: true,
+						items: 3,
 						margin: 10,
-						stagePadding: 50
+						stagePadding: 0
 					});
 
 					$('a', element).on('click', function(e){

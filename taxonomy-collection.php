@@ -9,7 +9,7 @@
 			<div class="item">
 				<a class="btn" href="<?php the_permalink(); ?>">
 					<figure class="collection-image">
-						<?php the_post_thumbnail(array('width' => 780, 'height' => 500, 'bfi_thumb' => true)); ?>
+						<?php the_post_thumbnail(array('width' => 780, 'height' => 550, 'bfi_thumb' => true)); ?>
 					</figure>
 				</a>
 
