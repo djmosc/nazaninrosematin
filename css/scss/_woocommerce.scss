@@ -866,8 +866,56 @@
 		margin: 3em 0 10em 0;
 	}
 
+
+
 	/* =Order Page
 	-------------------------------------------------------------- */
+	.order-details-table {
+		margin-top: 8em;
+	}
+
+	table.order_details {
+		border: none;
+
+		td, th {
+			padding: 25px 0;
+		}
+
+		th.product-name, td.product-name {
+			
+		}
+
+		th.product-total,
+		td.product-total,
+		th.order-quantity,
+		td.order-quantity
+		{
+			text-align: right;
+		}
+
+		thead {
+			tr {
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+		}
+
+		tbody {
+			border: none;
+		}
+
+		tfoot {
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+
+			td, th {
+				text-align: right;
+				padding: 10px 0;
+			}
+		}
+
+
+	}
 
 	.order_details {
 		@extend .clearfix;
