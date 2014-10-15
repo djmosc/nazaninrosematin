@@ -871,7 +871,7 @@
 	/* =Order Page
 	-------------------------------------------------------------- */
 	.order-details-table {
-		margin-top: 8em;
+		margin-top: 4em;
 	}
 
 	table.order_details {
@@ -929,15 +929,12 @@
 			float:left;
 			margin-right: 2em;
 			text-transform: uppercase;
-			font-size: 0.715em;
-			line-height: 1em;
+			color: #CCC;
 			padding-right: 2em;
 
 			strong {
 				display:block;
-				font-size: 1.4em;
-				text-transform:none;
-				line-height: 1.5em;
+				color: #000;
 			}
 
 			&:last-of-type {
